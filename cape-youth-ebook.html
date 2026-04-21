@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAPE Youth Edition — Confident. Aware. Protected. Empowered.</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=Fredoka+One&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cape-teal: #00BDBD;
+  --cape-gold: #F6CC00;
+  --cape-pink: #DD0E6E;
+  --cape-blue: #2C5F8D;
+  --cape-green: #4CAF82;
+  --cape-orange: #FF6B35;
+  --cape-purple: #7B4FBF;
+  --cape-yellow: #FFD166;
+  --text-dark: #1A2340;
+  --text-mid: #3D4F6B;
+  --bg-page: #F0F4FF;
+  --bg-card: #FFFFFF;
+  --bg-dark: #0D1A2E;
+  --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 36px;
+  --shadow-soft: 0 4px 24px rgba(44,95,141,0.10);
+  --shadow-card: 0 8px 40px rgba(44,95,141,0.14);
+  --trans: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg-page);color:var(--text-dark);min-height:100vh;overflow-x:hidden}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-thumb{background:rgba(44,95,141,0.3);border-radius:100px}
+
+/* ===== LANDING ===== */
+#landing{min-height:100vh;background:var(–bg-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:40px 20px;text-align:center}
+#landing::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 20% 20%,rgba(0,189,189,0.4) 0%,transparent 55%),radial-gradient(ellipse 60% 60% at 80% 80%,rgba(221,14,110,0.35) 0%,transparent 55%),radial-gradient(ellipse 50% 40% at 60% 10%,rgba(246,204,0,0.2) 0%,transparent 50%);pointer-events:none}
+.stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:white;animation:twinkle var(–dur,3s) ease-in-out infinite;animation-delay:var(–delay,0s);opacity:0}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0.5)}50%{opacity:var(–op,0.7);transform:scale(1)}}
+.landing-inner{position:relative;z-index:1;max-width:720px}
+.landing-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:100px;padding:6px 18px;font-size:0.78rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:24px}
+.cape-logo{font-family:‘Fredoka One’,sans-serif;font-size:clamp(5rem,18vw,10rem);line-height:1;background:linear-gradient(135deg,var(–cape-teal) 0%,var(–cape-gold) 45%,var(–cape-pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 40px rgba(246,204,0,0.3));animation:logoGlow 4s ease-in-out infinite alternate;letter-spacing:-0.01em}
+@keyframes logoGlow{from{filter:drop-shadow(0 0 30px rgba(0,189,189,0.3))}to{filter:drop-shadow(0 0 60px rgba(221,14,110,0.5))}}
+.landing-subtitle{font-size:clamp(0.8rem,2vw,1rem);font-weight:800;color:rgba(255,255,255,0.6);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px}
+.landing-acro{display:flex;justify-content:center;gap:clamp(12px,3vw,24px);margin-bottom:24px;flex-wrap:wrap}
+.acro-item{text-align:center}
+.acro-letter{font-family:‘Fredoka One’,sans-serif;font-size:clamp(1.2rem,3vw,1.8rem);line-height:1}
+.acro-word{font-size:clamp(0.55rem,1.2vw,0.72rem);font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:2px}
+.landing-desc{color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto 36px}
+.btn-launch{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(–cape-teal),var(–cape-blue));color:white;font-weight:900;font-size:1.1rem;padding:16px 40px;border-radius:100px;transition:var(–trans);box-shadow:0 8px 32px rgba(0,189,189,0.4);letter-spacing:0.02em;position:relative;overflow:hidden}
+.btn-launch:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 48px rgba(0,189,189,0.5)}
+.landing-chips{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:100px;padding:7px 16px;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.65);display:flex;align-items:center;gap:6px}
+.author-line{color:rgba(255,255,255,0.35);font-size:0.78rem;margin-top:32px;letter-spacing:0.05em}
+
+/* ===== TOPBAR ===== */
+#topbar{display:none;position:sticky;top:0;z-index:200;background:rgba(13,26,46,0.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);padding:0 24px;height:64px;align-items:center;justify-content:space-between;gap:16px}
+.topbar-logo{font-family:‘Fredoka One’,sans-serif;font-size:1.7rem;background:linear-gradient(135deg,var(–cape-teal),var(–cape-gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.topbar-prog{flex:1;max-width:360px;display:flex;flex-direction:column;gap:4px}
+.topbar-prog-label{font-size:0.68rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);display:flex;justify-content:space-between}
+.topbar-prog-bar{height:6px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden}
+.topbar-prog-fill{height:100%;background:linear-gradient(90deg,var(–cape-teal),var(–cape-gold));border-radius:100px;transition:width 0.6s ease}
+.topbar-actions{display:flex;gap:8px;align-items:center}
+.btn-icon{width:40px;height:40px;border-radius:var(–radius-sm);background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(–trans);border:1px solid rgba(255,255,255,0.09)}
+.btn-icon:hover{background:rgba(255,255,255,0.14);color:white}
+
+/* ===== READER LAYOUT ===== */
+#reader{display:none;flex:1;max-width:1120px;margin:0 auto;width:100%;padding:0 20px 80px}
+#reader-layout{display:grid;grid-template-columns:260px 1fr;gap:32px;padding-top:32px;align-items:start}
+@media(max-width:800px){#reader-layout{grid-template-columns:1fr}#sidebar{display:none}}
+
+/* ===== SIDEBAR ===== */
+#sidebar{position:sticky;top:80px;background:white;border-radius:var(–radius-lg);padding:20px 14px;box-shadow:var(–shadow-card);max-height:calc(100vh - 100px);overflow-y:auto}
+.sidebar-title{font-size:0.65rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:var(–text-mid);padding:0 8px;margin-bottom:10px}
+.nav-part-label{font-size:0.58rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:#94A3B8;padding:12px 8px 4px}
+.chapter-nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(–radius-sm);transition:var(–trans);cursor:pointer;margin-bottom:1px}
+.chapter-nav-item:hover{background:var(–bg-page)}
+.chapter-nav-item.active{background:linear-gradient(135deg,rgba(0,189,189,0.1),rgba(44,95,141,0.07));color:var(–cape-teal);font-weight:800}
+.chapter-nav-item.completed .nav-dot{background:var(–cape-green)}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:#CBD5E0;flex-shrink:0;transition:var(–trans)}
+.chapter-nav-item.active .nav-dot{background:var(–cape-teal)}
+.nav-label{font-size:0.8rem;line-height:1.35}
+.nav-grade{font-size:0.58rem;font-weight:800;padding:2px 6px;border-radius:100px;margin-left:auto;flex-shrink:0;background:rgba(76,175,130,0.12);color:var(–cape-green)}
+
+/* ===== PAGES ===== */
+.chapter-page{display:none}
+.chapter-page.active{display:block;animation:fadeUp 0.4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== CHAPTER HERO ===== */
+.chapter-hero{border-radius:var(–radius-xl) var(–radius-xl) var(–radius-md) var(–radius-md);padding:48px 40px 36px;margin-bottom:24px;position:relative;overflow:hidden;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;background:var(–hero-bg,linear-gradient(135deg,#2C5F8D,#4A90C4))}
+.chapter-hero::after{content:var(–hero-icon,’’);position:absolute;right:28px;top:20px;font-size:clamp(4rem,10vw,7rem);opacity:0.15;pointer-events:none}
+.hero-part{position:relative;z-index:2;font-size:0.68rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:6px}
+.hero-num{position:relative;z-index:2;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.5);margin-bottom:4px}
+.hero-title{position:relative;z-index:2;font-family:‘DM Serif Display’,serif;font-size:clamp(1.5rem,4vw,2.3rem);color:white;line-height:1.2}
+.grade-pills{position:relative;z-index:2;display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.grade-pill{font-size:0.7rem;font-weight:800;padding:4px 12px;border-radius:100px;background:rgba(255,255,255,0.16);color:white;border:1px solid rgba(255,255,255,0.28);letter-spacing:0.06em}
+
+/* ===== CONTENT BLOCKS ===== */
+.cb{background:white;border-radius:var(–radius-lg);padding:32px;margin-bottom:20px;box-shadow:var(–shadow-soft)}
+.cb h2{font-family:‘DM Serif Display’,serif;font-size:1.5rem;color:var(–text-dark);margin-bottom:14px}
+.cb h3{font-size:1.05rem;font-weight:900;color:var(–cape-blue);margin:20px 0 10px}
+.cb p{font-size:0.97rem;line-height:1.78;color:var(–text-mid);margin-bottom:12px}
+.cb ul{padding-left:20px;color:var(–text-mid);line-height:1.85;font-size:0.95rem}
+.cb ul li{margin-bottom:6px}
+.cb strong{color:var(–text-dark)}
+.ex{border-radius:var(–radius-md);padding:14px 18px;margin:12px 0;border-left:4px solid;font-size:0.93rem;line-height:1.65}
+.ex-g{background:rgba(76,175,130,0.08);border-color:var(–cape-green);color:var(–text-dark)}
+.ex-g::before{content:’🟢 ’}
+.ex-b{background:rgba(44,95,141,0.08);border-color:var(–cape-blue);color:var(–text-dark)}
+.ex-b::before{content:’🔵 ’}
+.callout{background:linear-gradient(135deg,rgba(0,189,189,0.1),rgba(246,204,0,0.08));border:1.5px solid rgba(0,189,189,0.3);border-radius:var(–radius-md);padding:18px 22px;margin:16px 0;font-size:1rem;font-weight:700;color:var(–cape-teal);line-height:1.55}
+.takeaway{background:linear-gradient(135deg,var(–bg-dark) 0%,#1a2e50 100%);border-radius:var(–radius-lg);padding:22px 26px;color:white;margin:20px 0 0}
+.takeaway strong{color:var(–cape-gold)}
+.takeaway p{color:rgba(255,255,255,0.82);margin-bottom:0;font-size:0.95rem}
+.warn-box{background:linear-gradient(135deg,rgba(221,14,110,0.08),rgba(255,107,53,0.06));border:1.5px solid rgba(221,14,110,0.25);border-radius:var(–radius-md);padding:18px 22px;margin:16px 0;font-size:0.93rem;line-height:1.65;color:var(–cape-pink)}
+
+/* ===== NAV BUTTONS ===== */
+.nav-row{display:flex;gap:14px;justify-content:space-between;margin-top:28px}
+.btn-prev,.btn-next{display:flex;align-items:center;gap:8px;padding:13px 22px;border-radius:100px;font-weight:900;font-size:0.88rem;transition:var(–trans);flex:1;justify-content:center}
+.btn-prev{background:white;color:var(–text-dark);border:2px solid #E2E8F0}
+.btn-prev:hover{border-color:var(–cape-teal);color:var(–cape-teal)}
+.btn-next{background:linear-gradient(135deg,var(–cape-teal),var(–cape-blue));color:white;box-shadow:0 6px 24px rgba(0,189,189,0.3)}
+.btn-next:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,189,189,0.45)}
+
+/* ===== WORKSHEETS ===== */
+.worksheet{background:#FFFDF5;border:2px dashed #E8D5A3;border-radius:var(–radius-lg);padding:26px;margin-bottom:20px}
+.ws-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ws-icon{width:44px;height:44px;background:var(–cape-gold);border-radius:var(–radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.ws-title{font-weight:900;font-size:1rem}
+.ws-sub{font-size:0.78rem;color:var(–text-mid);margin-top:2px}
+.journal-prompt{background:white;border-radius:var(–radius-md);padding:18px;margin-bottom:12px;border:1.5px solid #E8D5A3}
+.prompt-num{font-size:0.65rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(–cape-orange);margin-bottom:5px}
+.prompt-text{font-size:0.93rem;font-weight:700;color:var(–text-dark);margin-bottom:10px;line-height:1.5}
+.prompt-textarea{width:100%;min-height:76px;border:1.5px solid #E2E8F0;border-radius:var(–radius-sm);padding:11px;font-family:‘Nunito’,sans-serif;font-size:0.88rem;resize:vertical;transition:var(–trans);color:var(–text-dark);background:#FAFAFA}
+.prompt-textarea:focus{outline:none;border-color:var(–cape-teal);background:white;box-shadow:0 0 0 3px rgba(0,189,189,0.08)}
+
+/* ===== PROMISE ===== */
+.promise-section{background:linear-gradient(135deg,#FFF8E1,#FFF3CD);border-radius:var(–radius-lg);padding:28px;border:2px solid var(–cape-gold);margin-bottom:20px}
+.promise-title{font-family:‘DM Serif Display’,serif;font-size:1.5rem;text-align:center;margin-bottom:18px;color:var(–text-dark)}
+.promise-items{display:flex;flex-direction:column;gap:8px}
+.promise-item{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;background:rgba(255,255,255,0.65);border-radius:var(–radius-sm);font-size:0.91rem;line-height:1.55;color:var(–text-dark);font-weight:600}
+.promise-star{color:var(–cape-orange);font-size:1rem;flex-shrink:0;margin-top:2px}
+.promise-acro{text-align:center;font-family:‘DM Serif Display’,serif;font-size:1.2rem;margin:20px 0 14px;line-height:1.5}
+.sign-row{display:flex;gap:16px;margin-top:16px;align-items:flex-end}
+.sign-field{flex:1}
+.sign-label{font-size:0.68rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:var(–text-mid);margin-bottom:5px}
+.sign-input{width:100%;border:none;border-bottom:2px solid #CCC;padding:7px 4px;font-family:‘DM Serif Display’,serif;font-size:1rem;background:transparent;transition:var(–trans)}
+.sign-input:focus{outline:none;border-color:var(–cape-teal)}
+.btn-promise{background:linear-gradient(135deg,var(–cape-teal),var(–cape-blue));color:white;font-weight:900;padding:12px 28px;border-radius:100px;font-size:0.9rem;transition:var(–trans);margin-top:14px;display:block;width:100%;text-align:center}
+.btn-promise:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,189,189,0.35)}
+.btn-promise.signed{background:linear-gradient(135deg,var(–cape-green),#2E8B57)}
+
+/* ===== RESOURCES ===== */
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:20px}
+.resource-card{background:white;border-radius:var(–radius-lg);padding:22px;box-shadow:var(–shadow-soft);border-top:4px solid}
+.rc-crisis{border-color:var(–cape-pink)}
+.rc-health{border-color:var(–cape-green)}
+.rc-digital{border-color:var(–cape-blue)}
+.rc-educators{border-color:var(–cape-purple)}
+.resource-icon{font-size:1.8rem;margin-bottom:10px}
+.resource-title{font-weight:900;font-size:0.95rem;margin-bottom:10px}
+.resource-list{list-style:none}
+.resource-list li{font-size:0.85rem;padding:7px 0;border-bottom:1px solid #F0F4FF;color:var(–text-mid);line-height:1.45}
+.resource-list li:last-child{border-bottom:none}
+.resource-list li strong{color:var(–text-dark);display:block;font-size:0.88rem}
+
+/* ===== GLOSSARY ===== */
+.glossary-grid{display:grid;gap:10px}
+.glossary-item{background:white;border-radius:var(–radius-md);padding:14px 18px;box-shadow:var(–shadow-soft);display:grid;grid-template-columns:160px 1fr;gap:14px}
+.glossary-term{font-weight:900;color:var(–cape-blue);font-size:0.92rem}
+.glossary-def{font-size:0.9rem;color:var(–text-mid);line-height:1.6}
+@media(max-width:600px){.glossary-item{grid-template-columns:1fr}}
+
+/* ===== BADGES PAGE ===== */
+.cape-tracker{background:linear-gradient(135deg,var(–bg-dark),#1a2e50);border-radius:var(–radius-xl);padding:32px;color:white;margin-bottom:20px}
+.tracker-title{font-family:‘DM Serif Display’,serif;font-size:1.4rem;margin-bottom:4px}
+.tracker-sub{color:rgba(255,255,255,0.5);font-size:0.83rem;margin-bottom:22px}
+.prog-track{margin-bottom:18px}
+.prog-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+.prog-label-text{font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.6)}
+.prog-pct{font-size:0.78rem;font-weight:900;color:var(–cape-gold)}
+.prog-bar-track{height:10px;background:rgba(255,255,255,0.08);border-radius:100px;overflow:hidden}
+.prog-bar-fill{height:100%;background:linear-gradient(90deg,var(–cape-green),var(–cape-gold));border-radius:100px;transition:width 0.8s ease}
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.badge-item{text-align:center;padding:14px 10px;background:rgba(255,255,255,0.05);border-radius:var(–radius-md);border:1px solid rgba(255,255,255,0.05);transition:var(–trans)}
+.badge-item.earned{background:rgba(246,204,0,0.1);border-color:rgba(246,204,0,0.22)}
+.badge-emoji{font-size:1.8rem;margin-bottom:7px;display:block;filter:grayscale(1) opacity(0.35);transition:var(–trans)}
+.badge-item.earned .badge-emoji{filter:none}
+.badge-name{font-size:0.62rem;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.badge-item.earned .badge-name{color:var(–cape-gold)}
+.badge-desc{font-size:0.7rem;color:rgba(255,255,255,0.38);margin-top:4px;line-height:1.35}
+.badge-item.earned .badge-desc{color:rgba(255,255,255,0.6)}
+
+/* ===== DASHBOARD ===== */
+.dash-hero{background:linear-gradient(135deg,var(–bg-dark),#1a2e50,#0d2040);border-radius:var(–radius-xl);padding:44px 38px;color:white;margin-bottom:22px;position:relative;overflow:hidden}
+.dash-hero::after{content:‘🦸’;position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:8rem;opacity:0.06;pointer-events:none}
+.dash-greeting{font-size:0.72rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:7px}
+.dash-title{font-family:‘DM Serif Display’,serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:14px}
+.dash-tagline{color:rgba(255,255,255,0.6);font-size:0.97rem;line-height:1.65;max-width:420px;margin-bottom:26px}
+.dash-stats{display:flex;gap:24px;flex-wrap:wrap}
+.dash-stat-num{font-family:‘DM Serif Display’,serif;font-size:2rem;color:var(–cape-gold);line-height:1}
+.dash-stat-label{font-size:0.7rem;font-weight:800;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em}
+.chapter-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-bottom:22px}
+.ch-card{background:white;border-radius:var(–radius-lg);padding:22px;cursor:pointer;transition:var(–trans);box-shadow:var(–shadow-soft);border:2px solid transparent;position:relative;overflow:hidden}
+.ch-card:hover{transform:translateY(-4px);box-shadow:var(–shadow-card)}
+.ch-card.completed{background:linear-gradient(135deg,#F0FFF8,#E6FFEF);border-color:var(–cape-green)}
+.cc-emoji{font-size:2rem;margin-bottom:10px}
+.cc-num{font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:var(–text-mid);margin-bottom:3px}
+.cc-title{font-weight:900;font-size:0.92rem;line-height:1.35;color:var(–text-dark);margin-bottom:8px}
+.cc-check{position:absolute;top:12px;right:12px;width:24px;height:24px;background:var(–cape-green);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.72rem;opacity:0;transition:var(–trans)}
+.ch-card.completed .cc-check{opacity:1}
+.section-sep{display:flex;align-items:center;gap:14px;margin:28px 0 18px}
+.sep-line{flex:1;height:2px;background:#E2E8F0}
+.sep-label{font-size:0.68rem;font-weight:900;text-transform:uppercase;letter-spacing:0.12em;color:var(–text-mid);white-space:nowrap}
+
+/* ===== FRIES CAFÉ ===== */
+.consent-cafe{border-radius:var(–radius-xl);overflow:hidden;margin-bottom:20px;box-shadow:var(–shadow-card)}
+.cafe-exterior{background:linear-gradient(180deg,#1a0a00 0%,#2d1200 50%,#1a0a00 100%);padding:0 0 8px;position:relative}
+.cafe-exterior::before{content:’’;position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.015) 0,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 32px),repeating-linear-gradient(90deg,rgba(255,255,255,0.015) 0,rgba(255,255,255,0.015) 1px,transparent 1px,transparent 32px);pointer-events:none}
+/* Neon sign */
+.neon-sign-wrap{background:linear-gradient(180deg,#0a0000 0%,#1a0800 100%);padding:28px 20px 20px;text-align:center;border-bottom:3px solid #4a2000}
+.neon-sign{display:inline-block;position:relative}
+.neon-title{font-family:‘Fredoka One’,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);color:#FF0040;text-shadow:0 0 10px #FF0040,0 0 20px #FF0040,0 0 40px rgba(255,0,64,0.5);line-height:1;letter-spacing:0.02em;animation:neonFlicker 3s ease-in-out infinite alternate}
+.neon-subtitle{font-family:‘Fredoka One’,sans-serif;font-size:clamp(0.9rem,2.5vw,1.3rem);color:#00FFCC;text-shadow:0 0 8px #00FFCC,0 0 16px rgba(0,255,204,0.4);margin-top:4px;animation:neonFlicker2 4s ease-in-out infinite alternate}
+@keyframes neonFlicker{0%,95%,100%{opacity:1}96%,99%{opacity:0.8}}
+@keyframes neonFlicker2{0%,90%,100%{opacity:1}91%,94%{opacity:0.7}}
+.neon-cups{display:flex;justify-content:center;gap:clamp(6px,2vw,14px);margin-top:12px;font-size:clamp(1.2rem,3vw,1.8rem);opacity:0.7}
+/* Checkered strip */
+.checker-strip{height:20px;background:repeating-linear-gradient(90deg,#CC0000 0,#CC0000 20px,white 20px,white 40px);opacity:0.85}
+/* Menu boards */
+.menu-boards-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#1a0a00}
+.menu-board{background:linear-gradient(180deg,#1a0a00,#2a1400);border:1px solid rgba(255,215,0,0.2);padding:clamp(10px,2vw,18px) clamp(8px,1.5vw,14px);text-align:center;cursor:pointer;transition:var(–trans);position:relative;overflow:hidden}
+.menu-board:hover,.menu-board.selected{background:linear-gradient(180deg,#2a1800,#3a2000);border-color:rgba(255,215,0,0.6);transform:translateY(-2px)}
+.menu-board.selected{box-shadow:inset 0 0 0 1.5px #FFD700}
+.mb-letter-circle{width:clamp(28px,5vw,44px);height:clamp(28px,5vw,44px);border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-family:‘Fredoka One’,sans-serif;font-size:clamp(1rem,2.5vw,1.5rem);border:2px solid;box-shadow:0 0 12px var(–mb-glow)}
+.mb-word{font-family:‘Fredoka One’,sans-serif;font-size:clamp(0.55rem,1.2vw,0.8rem);color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px}
+.mb-desc{font-size:clamp(0.58rem,1.1vw,0.75rem);color:rgba(255,255,255,0.55);line-height:1.4;display:none}
+@media(min-width:600px){.mb-desc{display:block}}
+.mb-food{font-size:clamp(1rem,2.5vw,1.8rem);margin-bottom:6px;filter:drop-shadow(0 0 6px var(–mb-glow))}
+
+.mb-f{–mb-glow:rgba(76,175,130,0.6)}
+.mb-f .mb-letter-circle{background:rgba(76,175,130,0.2);color:#4CAF82;border-color:#4CAF82}
+.mb-r{–mb-glow:rgba(255,107,53,0.6)}
+.mb-r .mb-letter-circle{background:rgba(255,107,53,0.2);color:#FF6B35;border-color:#FF6B35}
+.mb-i{–mb-glow:rgba(246,204,0,0.6)}
+.mb-i .mb-letter-circle{background:rgba(246,204,0,0.15);color:#F6CC00;border-color:#F6CC00}
+.mb-e{–mb-glow:rgba(0,189,189,0.6)}
+.mb-e .mb-letter-circle{background:rgba(0,189,189,0.2);color:#00BDBD;border-color:#00BDBD}
+.mb-s{–mb-glow:rgba(221,14,110,0.6)}
+.mb-s .mb-letter-circle{background:rgba(221,14,110,0.2);color:#DD0E6E;border-color:#DD0E6E}
+
+/* Booth / scenario area */
+.cafe-booth{background:linear-gradient(180deg,#2d1200,#1a0800);padding:20px;border-top:2px solid rgba(255,215,0,0.15)}
+.booth-floor{height:24px;background:repeating-linear-gradient(45deg,#0d0800 0,#0d0800 8px,#1a1000 8px,#1a1000 16px);margin-bottom:0;border-top:2px solid rgba(255,255,255,0.06)}
+
+/* FRIES detail panel */
+.fries-detail{background:rgba(255,255,255,0.04);border:1px solid rgba(255,215,0,0.15);border-radius:var(–radius-md);padding:18px 20px;margin-bottom:16px;min-height:80px;display:none;animation:fadeUp 0.3s ease}
+.fries-detail.show{display:block}
+.fd-title{font-family:‘Fredoka One’,sans-serif;font-size:1rem;margin-bottom:8px}
+.fd-body{font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.6}
+.fd-examples{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.fd-ex-g,.fd-ex-b{font-size:0.82rem;padding:8px 12px;border-radius:6px;line-height:1.45}
+.fd-ex-g{background:rgba(76,175,130,0.15);color:#8ef0c0;border-left:3px solid #4CAF82}
+.fd-ex-b{background:rgba(0,189,189,0.12);color:#80e8e8;border-left:3px solid #00BDBD}
+
+/* Scenario area */
+.scenario-box-outer{background:rgba(255,255,255,0.04);border:1px solid rgba(255,215,0,0.18);border-radius:var(–radius-md);padding:20px;margin-bottom:14px}
+.scenario-tag{font-size:0.65rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,215,0,0.65);margin-bottom:8px}
+.scenario-text-p{color:rgba(255,255,255,0.88);font-size:0.93rem;line-height:1.65;margin-bottom:12px}
+.scenario-q{color:#FFD700;font-weight:800;font-size:0.9rem}
+.choices-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.choice-btn{background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.13);border-radius:var(–radius-sm);padding:13px 16px;color:rgba(255,255,255,0.82);font-size:0.88rem;text-align:left;transition:var(–trans);font-family:‘Nunito’,sans-serif;font-weight:600;line-height:1.4}
+.choice-btn:hover{background:rgba(255,215,0,0.08);border-color:rgba(255,215,0,0.35);color:white}
+.choice-btn.correct{background:rgba(76,175,130,0.2);border-color:#4CAF82;color:#9effd0}
+.choice-btn.incorrect{background:rgba(221,14,110,0.18);border-color:#DD0E6E;color:#ff9bbf}
+.scenario-fb{border-radius:var(–radius-sm);padding:14px 18px;font-size:0.88rem;line-height:1.6;font-weight:700;display:none}
+.scenario-fb.show{display:block;animation:fadeUp 0.3s ease}
+.fb-good{background:rgba(76,175,130,0.14);border:1px solid #4CAF82;color:#9effd0}
+.fb-bad{background:rgba(255,107,53,0.14);border:1px solid var(–cape-orange);color:#ffb899}
+.cafe-score-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid rgba(255,255,255,0.07);margin-top:4px}
+.cafe-score-txt{font-size:0.8rem;font-weight:800;color:rgba(255,215,0,0.8);letter-spacing:0.06em}
+.btn-cafe{background:linear-gradient(135deg,#FFD700,#FF9500);color:#1a0800;font-weight:900;font-size:0.85rem;padding:10px 22px;border-radius:100px;transition:var(–trans);display:inline-flex;align-items:center;gap:7px}
+.btn-cafe:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,0.35)}
+.btn-cafe:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+
+/* ===== MATCH COMPASS SVG SECTION ===== */
+.match-section{background:white;border-radius:var(–radius-xl);padding:32px;margin-bottom:20px;box-shadow:var(–shadow-card)}
+.compass-wrap{display:flex;flex-direction:column;align-items:center;gap:24px;margin-bottom:28px}
+@media(min-width:700px){.compass-wrap{flex-direction:row;align-items:center;justify-content:center}}
+.compass-svg-wrap{flex-shrink:0;width:clamp(200px,40vw,280px);position:relative}
+.compass-svg-wrap svg{width:100%;height:auto;filter:drop-shadow(0 8px 32px rgba(0,189,189,0.25))}
+.compass-needle{transform-origin:50% 50%;animation:compassIdle 6s ease-in-out infinite}
+@keyframes compassIdle{0%,100%{transform:rotate(-5deg)}33%{transform:rotate(10deg)}66%{transform:rotate(-8deg)}}
+.compass-spinning .compass-needle{animation:compassSpin 0.7s ease-out forwards;animation-iteration-count:1}
+@keyframes compassSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.match-letter-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%;max-width:480px}
+.ml-card{border-radius:var(–radius-md);padding:clamp(10px,2vw,14px) 8px;text-align:center;cursor:pointer;transition:var(–trans);border:2px solid transparent;background:var(–bg-page)}
+.ml-card:hover{transform:translateY(-3px)}
+.ml-card.active{transform:translateY(-3px);box-shadow:var(–shadow-card)}
+.ml-letter{font-family:‘Fredoka One’,sans-serif;font-size:clamp(1.4rem,3vw,2rem);line-height:1;margin-bottom:3px}
+.ml-word{font-size:clamp(0.55rem,1.1vw,0.65rem);font-weight:900;text-transform:uppercase;letter-spacing:0.07em;opacity:0.8}
+/* M card */
+.ml-m{background:rgba(246,204,0,0.12);color:#C17C00}.ml-m.active{background:#F6CC00;color:#7D4F00;border-color:#F6CC00}
+/* A card */
+.ml-a{background:rgba(0,189,189,0.1);color:var(–cape-teal)}.ml-a.active{background:var(–cape-teal);color:white;border-color:var(–cape-teal)}
+/* T card */
+.ml-t{background:rgba(76,175,130,0.1);color:var(–cape-green)}.ml-t.active{background:var(–cape-green);color:white;border-color:var(–cape-green)}
+/* C card */
+.ml-c{background:rgba(221,14,110,0.1);color:var(–cape-pink)}.ml-c.active{background:var(–cape-pink);color:white;border-color:var(–cape-pink)}
+/* H card */
+.ml-h{background:rgba(123,79,191,0.1);color:var(–cape-purple)}.ml-h.active{background:var(–cape-purple);color:white;border-color:var(–cape-purple)}
+.match-detail-panel{background:var(–bg-page);border-radius:var(–radius-md);padding:20px;min-height:100px;transition:var(–trans);display:none}
+.match-detail-panel.show{display:block;animation:fadeUp 0.3s ease}
+.mdp-title{font-weight:900;font-size:1rem;margin-bottom:8px}
+.mdp-body{font-size:0.9rem;line-height:1.7;color:var(–text-mid)}
+/* Scenario tool */
+.match-scenario-section{margin-top:24px;border-top:2px solid var(–bg-page);padding-top:24px}
+.ms-label{font-size:0.68rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(–text-mid);margin-bottom:14px}
+.ms-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.ms-tab{padding:7px 16px;border-radius:100px;border:2px solid #E2E8F0;background:white;font-weight:800;font-size:0.78rem;cursor:pointer;transition:var(–trans);color:var(–text-mid)}
+.ms-tab.active{border-color:var(–cape-teal);background:rgba(0,189,189,0.08);color:var(–cape-teal)}
+.ms-card{background:linear-gradient(135deg,#1A2340,#2C3E60);border-radius:var(–radius-lg);padding:22px;color:white;margin-bottom:14px}
+.ms-situation{font-size:0.92rem;line-height:1.65;margin-bottom:14px;color:rgba(255,255,255,0.88)}
+.ms-run{font-size:0.68rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.ms-checks{display:flex;flex-direction:column;gap:8px}
+.ms-check-item{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,0.05);border-radius:6px;padding:11px 14px;cursor:pointer;transition:var(–trans)}
+.ms-check-item:hover{background:rgba(255,255,255,0.09)}
+.ms-check-item.checked{background:rgba(76,175,130,0.18)}
+.ms-check-box{width:20px;height:20px;border-radius:5px;border:2px solid rgba(255,255,255,0.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(–trans);font-size:0.72rem}
+.ms-check-item.checked .ms-check-box{background:var(–cape-green);border-color:var(–cape-green);color:white}
+.ms-check-letter{font-family:‘Fredoka One’,sans-serif;font-size:0.95rem;color:var(–cape-gold)}
+.ms-check-text{font-size:0.84rem;line-height:1.4;color:rgba(255,255,255,0.8)}
+.ms-result{background:linear-gradient(135deg,rgba(76,175,130,0.12),rgba(0,189,189,0.08));border:1.5px solid var(–cape-green);border-radius:var(–radius-md);padding:14px 18px;display:none;color:var(–cape-green);font-weight:800;font-size:0.9rem;line-height:1.6}
+.ms-result.show{display:block;animation:fadeUp 0.3s ease}
+
+/* ===== DIGITAL CRISIS ===== */
+.crisis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:20px}
+.crisis-card{border-radius:var(–radius-lg);padding:22px;position:relative;overflow:hidden}
+.crisis-card::before{content:var(–crisis-icon,’’);position:absolute;right:12px;top:12px;font-size:2.8rem;opacity:0.12}
+.cc-orange{background:linear-gradient(135deg,#FF6B35,#FF9166);color:white}
+.cc-teal{background:linear-gradient(135deg,#00BDBD,#2C5F8D);color:white}
+.cc-dark{background:linear-gradient(135deg,#1A2340,#2C3E60);color:white}
+.cc-pink{background:linear-gradient(135deg,#DD0E6E,#FF6B9D);color:white}
+.crisis-card h3{font-family:‘Fredoka One’,sans-serif;font-size:1.1rem;margin-bottom:10px;color:white}
+.crisis-card p{font-size:0.86rem;line-height:1.6;color:rgba(255,255,255,0.88);margin-bottom:0}
+.crisis-card ul{padding-left:18px;color:rgba(255,255,255,0.85);font-size:0.86rem;line-height:1.75}
+/* Stop-Delete-Report */
+.sdr-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+.sdr-step{background:linear-gradient(135deg,rgba(15,26,46,0.95),rgba(26,46,80,0.95));border-radius:var(–radius-lg);padding:20px;text-align:center;border:2px solid rgba(255,255,255,0.08);position:relative;overflow:hidden}
+.sdr-num{font-family:‘Fredoka One’,sans-serif;font-size:2rem;color:var(–cape-gold);line-height:1;margin-bottom:6px}
+.sdr-icon{font-size:1.8rem;margin-bottom:8px;display:block}
+.sdr-title{font-weight:900;font-size:0.95rem;color:white;margin-bottom:6px}
+.sdr-desc{font-size:0.82rem;color:rgba(255,255,255,0.65);line-height:1.5}
+@media(max-width:500px){.sdr-wrap{grid-template-columns:1fr}}
+/* High-Pressure Moments */
+.hpm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0}
+.hpm-card{border-radius:var(–radius-lg);padding:20px;background:white;box-shadow:var(–shadow-soft);border-left:4px solid}
+.hpm-situation{font-size:0.82rem;color:var(–text-mid);margin-bottom:12px;line-height:1.55}
+.hpm-pivot-label{font-size:0.62rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
+.hpm-pivot{font-size:0.88rem;font-weight:700;line-height:1.55;color:var(–text-dark)}
+.hpm-card-1{border-color:var(–cape-gold)} .hpm-pivot-label-1{color:var(–cape-gold)}
+.hpm-card-2{border-color:var(–cape-purple)} .hpm-pivot-label-2{color:var(–cape-purple)}
+.hpm-card-3{border-color:var(–cape-orange)} .hpm-pivot-label-3{color:var(–cape-orange)}
+.hpm-card-4{border-color:var(–cape-teal)} .hpm-pivot-label-4{color:var(–cape-teal)}
+
+/* ===== ABOUT / PARENT GUIDE ===== */
+.about-hero{background:linear-gradient(135deg,var(–cape-teal),var(–cape-blue));border-radius:var(–radius-xl);padding:44px 38px;color:white;margin-bottom:24px}
+.about-photo-row{display:flex;align-items:flex-start;gap:28px;flex-wrap:wrap}
+.about-photo-circle{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.2);border:4px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0}
+.about-creds{display:flex;flex-direction:column;gap:6px;margin-top:14px;flex-wrap:wrap}
+.cred-chip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,0.12);border-radius:100px;padding:5px 14px;font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.88)}
+.teks-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:12px}
+.teks-table th{background:var(–cape-teal);color:white;padding:10px 14px;text-align:left;font-weight:900;font-size:0.78rem;letter-spacing:0.05em}
+.teks-table td{padding:9px 14px;border-bottom:1px solid #E2E8F0;color:var(–text-mid);line-height:1.5;vertical-align:top}
+.teks-table tr:nth-child(even) td{background:#F8FBFF}
+
+/* ===== TOAST & MODAL ===== */
+#toast{position:fixed;bottom:24px;right:24px;background:var(–bg-dark);color:white;padding:13px 18px;border-radius:var(–radius-md);font-size:0.85rem;font-weight:800;max-width:300px;box-shadow:0 16px 48px rgba(0,0,0,0.5);z-index:9999;display:none;align-items:center;gap:9px;border-left:4px solid var(–cape-green);animation:slideToast 0.4s ease}
+#toast.show{display:flex}
+@keyframes slideToast{from{transform:translateX(110%);opacity:0}to{transform:translateX(0);opacity:1}}
+#badge-modal{position:fixed;inset:0;background:rgba(13,26,46,0.88);z-index:10000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(14px);padding:20px}
+#badge-modal.show{display:flex;animation:fadeIn 0.3s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.bm-card{background:white;border-radius:var(–radius-xl);padding:44px 36px;text-align:center;max-width:360px;width:100%;animation:popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275)}
+@keyframes popIn{from{transform:scale(0.6);opacity:0}to{transform:scale(1);opacity:1}}
+.bm-emoji{font-size:4.5rem;display:block;margin-bottom:14px;animation:bounce 0.6s 0.3s ease both}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.bm-title{font-family:‘DM Serif Display’,serif;font-size:1.7rem;margin-bottom:7px}
+.bm-name{color:var(–cape-orange);font-weight:900;font-size:0.95rem;margin-bottom:10px}
+.bm-desc{color:var(–text-mid);font-size:0.88rem;line-height:1.6;margin-bottom:22px}
+.btn-bm-close{background:linear-gradient(135deg,var(–cape-teal),var(–cape-blue));color:white;font-weight:900;padding:11px 30px;border-radius:100px;font-size:0.9rem;transition:var(–trans)}
+.btn-bm-close:hover{transform:translateY(-2px)}
+
+/* ===== MOBILE NAV ===== */
+#mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(13,26,46,0.96);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,0.07);padding:6px 14px 10px;z-index:300;grid-template-columns:repeat(5,1fr);gap:2px}
+@media(max-width:800px){#mobile-nav{display:grid}#reader{padding-bottom:90px}}
+.mob-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 4px;border-radius:6px;color:rgba(255,255,255,0.4);font-size:0.58rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;transition:var(–trans)}
+.mob-btn.active,.mob-btn:hover{color:var(–cape-gold)}
+.mob-icon{font-size:1.3rem}
+
+/* ===== MISC ===== */
+@media(max-width:600px){.cb{padding:22px 18px}.chapter-hero{padding:36px 22px 28px}.match-section{padding:22px 18px}.menu-boards-row{grid-template-columns:repeat(5,1fr)}}
+</style>
+
+</head>
+<body>
+
+<!-- LANDING -->
+
+<section id="landing">
+  <div class="stars" id="starsContainer"></div>
+  <div class="landing-inner">
+    <div class="landing-badge">✦ The Harness Project LLC · 2026 · Licensed Educational Content</div>
+    <div class="cape-logo">CAPE</div>
+    <div class="landing-subtitle">Youth Edition</div>
+    <div class="landing-acro">
+      <div class="acro-item"><div class="acro-letter" style="color:#00BDBD">C</div><div class="acro-word">Confident</div></div>
+      <div class="acro-item"><div class="acro-letter" style="color:#F6CC00">A</div><div class="acro-word">Aware</div></div>
+      <div class="acro-item"><div class="acro-letter" style="color:#DD0E6E">P</div><div class="acro-word">Protected</div></div>
+      <div class="acro-item"><div class="acro-letter" style="color:#7B4FBF">E</div><div class="acro-word">Empowered</div></div>
+    </div>
+    <p class="landing-desc">Your personal power manual for health, respect, consent, and confident decision-making. A complete middle and high school curriculum replacing fear with agency.</p>
+    <button class="btn-launch" onclick="launchReader()">
+      <span>Start My Journey</span><span>→</span>
+    </button>
+    <div class="landing-chips">
+      <div class="chip">☕ Consent Café Simulator</div>
+      <div class="chip">🧭 MATCH Compass</div>
+      <div class="chip">🛡 Digital Crisis Protocol</div>
+      <div class="chip">🏆 Achievement Badges</div>
+      <div class="chip">💾 Progress Saved</div>
+    </div>
+    <div class="author-line">By Christopher Zacharie · The Harness Project LLC · theharnessproject.org · © 2026</div>
+  </div>
+</section>
+
+<!-- TOPBAR -->
+
+<div id="topbar">
+  <div class="topbar-logo">CAPE</div>
+  <div class="topbar-prog">
+    <div class="topbar-prog-label"><span id="tb-chapter-label">Dashboard</span><span id="tb-pct">0%</span></div>
+    <div class="topbar-prog-bar"><div class="topbar-prog-fill" id="tb-fill" style="width:0%"></div></div>
+  </div>
+  <div class="topbar-actions">
+    <button class="btn-icon" onclick="toggleSidebar()" title="Chapters">☰</button>
+    <button class="btn-icon" onclick="showPage('dashboard')" title="Home">🏠</button>
+    <button class="btn-icon" onclick="saveProgress()" title="Save">💾</button>
+    <button class="btn-icon" onclick="showPage('resources')" title="Help">🆘</button>
+  </div>
+</div>
+
+<!-- READER -->
+
+<div id="reader">
+  <div id="reader-layout">
+    <nav id="sidebar"><div class="sidebar-title">Contents</div><div id="nav-list"></div></nav>
+    <main id="content-area"></main>
+  </div>
+</div>
+
+<!-- MOBILE NAV -->
+
+<div id="mobile-nav">
+  <button class="mob-btn" onclick="showPage('dashboard')"><span class="mob-icon">🏠</span>Home</button>
+  <button class="mob-btn" onclick="showPage('chapter-1')"><span class="mob-icon">📖</span>Read</button>
+  <button class="mob-btn" onclick="showPage('chapter-4')"><span class="mob-icon">☕</span>Café</button>
+  <button class="mob-btn" onclick="showPage('chapter-8')"><span class="mob-icon">🧭</span>Compass</button>
+  <button class="mob-btn" onclick="showPage('resources')"><span class="mob-icon">🆘</span>Help</button>
+</div>
+
+<div id="toast"></div>
+<div id="badge-modal">
+  <div class="bm-card">
+    <span class="bm-emoji" id="bm-emoji">🏆</span>
+    <h2 class="bm-title">Achievement Unlocked!</h2>
+    <div class="bm-name" id="bm-name"></div>
+    <p class="bm-desc" id="bm-desc"></p>
+    <button class="btn-bm-close" onclick="closeBadgeModal()">Keep Going! →</button>
+  </div>
+</div>
+
+<script>
+/* ================================================================
+   DATA
+================================================================ */
+const CHAPTERS_DATA = [
+  {id:'dashboard',title:'Dashboard',special:true},
+  {id:'parent-guide',title:'Parent & Educator Guide',part:'Welcome',emoji:'👋',num:''},
+  {id:'intro',title:'Introduction for Youth',part:'Welcome',emoji:'🌟',num:''},
+  {id:'chapter-1',title:'Own Your Health',part:'Part I — CAPE Mindset',emoji:'💪',num:'Chapter 1'},
+  {id:'chapter-2',title:'Courageous Communication',part:'Part I — CAPE Mindset',emoji:'💬',num:'Chapter 2'},
+  {id:'chapter-3',title:'Healthy vs. Unhealthy Relationships',part:'Part II — Healthy Connections',emoji:'❤️',num:'Chapter 3'},
+  {id:'chapter-4',title:'The Consent Café — FRIES',part:'Part II — Healthy Connections',emoji:'☕',num:'Chapter 4'},
+  {id:'chapter-5',title:'The Boundary Shield',part:'Part II — Healthy Connections',emoji:'🛡',num:'Chapter 5'},
+  {id:'chapter-6',title:'Barriers & Frontline Gear',part:'Part III — Protection Shields',emoji:'⚙️',num:'Chapter 6'},
+  {id:'chapter-7',title:'Medical Shields',part:'Part III — Protection Shields',emoji:'🔬',num:'Chapter 7'},
+  {id:'chapter-8',title:'The MATCH Compass',part:'Part IV — CAPE in Action',emoji:'🧭',num:'Chapter 8'},
+  {id:'chapter-9',title:'Becoming the Leader',part:'Part IV — CAPE in Action',emoji:'🦸',num:'Chapter 9'},
+  {id:'digital-crisis',title:'Digital Crisis Protocol',part:'Appendix',emoji:'📱',num:''},
+  {id:'resources',title:'Resources & Help',part:'Appendix',emoji:'🆘',num:''},
+  {id:'glossary',title:'Glossary',part:'Appendix',emoji:'📖',num:''},
+  {id:'about',title:'About the Author',part:'Appendix',emoji:'👤',num:''},
+  {id:'badges',title:'My Achievements',special:true,emoji:'🏆'},
+];
+
+const BADGES_DATA = [
+  {id:'started',emoji:'🚀',name:'Journey Begins',desc:'You opened the CAPE Youth Edition and launched your journey.'},
+  {id:'mindset',emoji:'🧠',name:'Mindset Builder',desc:'Completed Part I — Building Your CAPE Mindset.'},
+  {id:'consent',emoji:'☕',name:'Consent Champion',desc:'Achieved a perfect score in the FRIES Café Simulator!'},
+  {id:'boundary',emoji:'🛡',name:'Boundary Builder',desc:'Completed The Boundary Shield chapter.'},
+  {id:'compass',emoji:'🧭',name:'Compass Master',desc:'Ran the MATCH Compass on a real scenario.'},
+  {id:'promise',emoji:'✦',name:'CAPE Pledged',desc:'You signed the CAPE Promise. A commitment to yourself!'},
+  {id:'halfway',emoji:'⭐',name:'Halfway Hero',desc:"You're halfway through the CAPE Youth Edition!"},
+  {id:'digital',emoji:'📱',name:'Digital Guardian',desc:'Completed the Digital Crisis Protocol module.'},
+  {id:'complete',emoji:'🦸',name:'Full CAPE Leader',desc:'You completed the entire CAPE Youth Edition!'},
+];
+
+const FRIES_DATA = {
+  F:{letter:'F',word:'Freely Given',food:'🥤',color:'#4CAF82',glow:'rgba(76,175,130,0.6)',
+    title:'F — Freely Given',
+    body:'Consent is only real when it comes from you without pressure, guilt, begging, or fear of missing out. The moment someone keeps asking after you\'ve said no, the consent is already gone.',
+    ex_g:'🟢 Friends want to play a game. You say yes only because you genuinely want to — not because everyone else is.',
+    ex_b:'🔵 Someone asks for a hug repeatedly after you declined. Real consent can\'t exist under that pressure.'},
+  R:{letter:'R',word:'Reversible',food:'🎵',color:'#FF6B35',glow:'rgba(255,107,53,0.6)',
+    title:'R — Reversible',
+    body:'You can change your mind at any moment — even after you\'ve already started. The other person must stop immediately, no questions asked. "Send It Back" — if the vibe shifts, the kitchen must stop.',
+    ex_g:'🟢 You start sharing a funny story but then feel unsure. You can say "Actually, never mind" and they respect it.',
+    ex_b:'🔵 You agreed to hang out one-on-one but later feel uncomfortable. You have the right to change the plan.'},
+  I:{letter:'I',word:'Informed',food:'🔍',color:'#F6CC00',glow:'rgba(246,204,0,0.6)',
+    title:'I — Informed',
+    body:'You deserve to know exactly what you\'re agreeing to and any possible outcomes — no mystery items. The "Ingredient List" Rule. No surprises, no hidden extras.',
+    ex_g:'🟢 Before sharing your location or a photo, you get to ask all the questions you need.',
+    ex_b:'🔵 Before any kind of closer physical contact, everyone is honest about feelings, boundaries, and health status.'},
+  E:{letter:'E',word:'Enthusiastic',food:'🎉',color:'#00BDBD',glow:'rgba(0,189,189,0.6)',
+    title:'E — Enthusiastic',
+    body:'The only yes that counts is one that feels genuinely excited — a real "Heck YES!" Silence, "maybe," or "I guess" means No. Always. No exceptions.',
+    ex_g:'🟢 A high-five after winning a game — the energy from both sides is real and excited.',
+    ex_b:'🔵 "Do you want to spend time alone together?" Only a real, pumped-up yes counts here.'},
+  S:{letter:'S',word:'Specific',food:'🍕',color:'#DD0E6E',glow:'rgba(221,14,110,0.6)',
+    title:'S — Specific',
+    body:'Saying yes to one thing does not mean yes to everything else. The "A La Carte" Menu — you order exactly what you want, nothing more gets added to your tray.',
+    ex_g:'🟢 "Yes, you can borrow my headphones" does not mean "yes, you can go through my phone."',
+    ex_b:'🔵 Agreeing to hold hands does not mean agreeing to kissing or anything further.'},
+};
+
+const FRIES_SCENARIOS = [
+  {
+    text:'Your friend keeps asking you to share your phone password so they can "look at something real quick." You say no, but they keep asking.',
+    q:'Which FRIES principle is being violated?',
+    choices:[
+      {text:'F — Freely Given: Consent given under repeated pressure isn\'t real consent.',correct:true},
+      {text:'E — Enthusiastic: They should be more excited about getting the password.',correct:false},
+      {text:'S — Specific: They haven\'t been specific about what they want to see.',correct:false}
+    ],
+    good:'✅ Exactly right! F — Freely Given means consent can\'t be real if it\'s the result of pressure or repeated asking. Your no was valid the first time.',
+    bad:'❌ The key principle here is F — Freely Given. After you say no, any further asking makes the whole thing not freely given.'
+  },
+  {
+    text:'You agree to a group sleepover, but once you arrive the plans change and you feel uncomfortable. You want to leave.',
+    q:'What FRIES principle gives you the right to leave?',
+    choices:[
+      {text:'R — Reversible: You can always change your mind — even after you\'ve agreed or started.',correct:true},
+      {text:'I — Informed: You didn\'t know all the information before agreeing.',correct:false},
+      {text:'E — Enthusiastic: You no longer feel enthusiastic, so consent is gone.',correct:false}
+    ],
+    good:'✅ Yes! R — Reversible means you can ALWAYS withdraw consent at any point, no explanations required. Your comfort comes first.',
+    bad:'❌ While I and E are partially related, the main principle is R — Reversible. Consent can be changed or withdrawn at any time, for any reason.'
+  },
+  {
+    text:'Someone asks if you want to hang out. You say "sure, I guess." They take that as a yes and make plans.',
+    q:'Which FRIES principle means "I guess" is NOT a real yes?',
+    choices:[
+      {text:'F — Freely Given: The response was reluctant, not voluntary.',correct:false},
+      {text:'E — Enthusiastic: Only a real, excited yes counts. "I guess" is not enthusiastic.',correct:true},
+      {text:'S — Specific: The agreement wasn\'t specific about what hanging out involves.',correct:false}
+    ],
+    good:'✅ Perfect! E — Enthusiastic: silence, "maybe," or "I guess" all mean NO. Only a genuine "Heck YES!" counts as real consent.',
+    bad:'❌ The main principle is E — Enthusiastic. "I guess" is never enough. Only a real, pumped-up yes is consent.'
+  }
+];
+
+const MATCH_DATA = {
+  M:{title:'💊 M — My Medical Choices & Check-Ups',color:'#C17C00',
+    body:'Your "Health Armor" — stay updated on vaccines and regular doctor check-ups to own your physical well-being. Knowing your health status gives you total confidence and control.<br><br><strong>🟢</strong> You ask your parent, "Did I get the HPV vaccine yet?"<br><strong>🔵</strong> Before any new situation: "I know my status and I have a plan to stay safe."'},
+  A:{title:'👁 A — Awareness of Self & Surroundings',color:'#00BDBD',
+    body:'Your "Built-In Radar" — trust your gut when a situation feels "off" and stay true to your personal values. Your instincts are data, not drama. When something feels wrong, that feeling is information.<br><br><strong>🟢</strong> At a sleepover, you notice the vibe changing and decide to call a parent for a ride.<br><strong>🔵</strong> Someone\'s compliments start feeling too pushy — your radar says it\'s time to create space.'},
+  T:{title:'🛠 T — Tools & Trusted Support',color:'#4CAF82',
+    body:'Your "Safety Kit" — always have a charged phone, a ride plan, and a safety buddy you can count on. Never leave home without your full toolkit. Know who to call before you need to call them.<br><br><strong>🟢</strong> You text your safety buddy before heading to a friend\'s house: "Here if you need me?"<br><strong>🔵</strong> You keep trusted adult contacts on speed dial and know exactly where to go for emergency help.'},
+  C:{title:'💬 C — Clear Communication & Consent',color:'#DD0E6E',
+    body:'Your "Strongest Voice" — use FRIES skills (Freely given, Reversible, Informed, Enthusiastic, Specific) to ensure mutual respect. If you can\'t talk about it openly and enthusiastically, you aren\'t ready — and that\'s powerful information.<br><br><strong>🟢</strong> "I\'m only comfortable playing this game if everyone is genuinely excited."<br><strong>🔵</strong> "I care about us both staying healthy and respected — let\'s talk about protection and boundaries first."'},
+  H:{title:'✨ H — Healthy Habits & Choices',color:'#7B4FBF',
+    body:'Your "Daily Superpower" — choose your own pace, practice self-care, and surround yourself with people who lift you up. Safety isn\'t a one-time thing — it\'s a lifestyle. Every small choice builds the confident future you deserve.<br><br><strong>🟢</strong> You choose friends who lift you up and activities that make you feel proud.<br><strong>🔵</strong> You practice saying "I\'m choosing to wait because I\'m worth it" — and it gets easier every time.'},
+};
+
+const MATCH_SCENARIOS = [
+  {
+    title:'The Group Hang',
+    situation:"You're at a friend's house and the energy starts shifting. People are pairing off, someone brought drinks, and you're feeling uncomfortable. You don't know if you have a ride home.",
+    checks:[
+      {l:'M',t:"I'm up-to-date on my health check-ups and vaccines. My health status is my foundation."},
+      {l:'A',t:"My gut is saying this doesn't feel right. I need to trust that built-in radar."},
+      {l:'T',t:"Check: Is my phone charged? Do I have a ride plan? Is my safety buddy reachable?"},
+      {l:'C',t:'"Hey, I\'m going to head out — who wants to walk outside with me?"'},
+      {l:'H',t:"I choose my peace over fitting in. That is a healthy habit and a leadership move."}
+    ],
+    result:'🌟 You ran the MATCH Compass and chose yourself. Every checked box is a leadership move. The people who matter will respect you for it.'
+  },
+  {
+    title:'The Online Contact',
+    situation:"Someone you met online two weeks ago wants to meet up alone. They've been really nice and complimentary, but something feels a bit too fast. They keep pushing for a location.",
+    checks:[
+      {l:'M',t:"I know my health status and I'm not ready to put myself in an unknown situation alone."},
+      {l:'A',t:'"Something feels too fast" — my awareness radar is alerting me. Gut feelings are data.'},
+      {l:'T',t:"I have a trusted adult\'s contact on speed dial before I respond to this person."},
+      {l:'C',t:'"I\'m not ready for one-on-one meetups yet — let\'s keep things in a group for now."'},
+      {l:'H',t:"Protecting my digital and physical boundaries is a healthy habit I practice every day."}
+    ],
+    result:"🌟 Smart move! When something feels too fast, it usually is. You demonstrated every letter of the MATCH Compass — that's fearless, aware, protected, and empowered."
+  }
+];
+
+/* ================================================================
+   STATE
+================================================================ */
+let state = {
+  currentPage:'dashboard',
+  completedChapters:{},
+  badges:{},
+  journalEntries:{},
+  promiseSigned:false,
+  promiseName:'',
+  cafeScore:0,
+  cafeCompleted:{},
+  matchDone:{},
+  challengeItems:{},
+  totalProgress:0
+};
+
+function loadState(){try{const s=localStorage.getItem('cape_v2_state');if(s)state={...state,...JSON.parse(s)}}catch(e){}}
+function saveState(){try{localStorage.setItem('cape_v2_state',JSON.stringify(state))}catch(e){}}
+function saveProgress(){saveState();showToast('💾 Progress saved!')}
+
+/* ================================================================
+   LAUNCH
+================================================================ */
+function launchReader(){
+  loadState();
+  document.getElementById('landing').style.display='none';
+  document.getElementById('topbar').style.display='flex';
+  document.getElementById('reader').style.display='block';
+  document.getElementById('mobile-nav').style.display='grid';
+  buildStars();
+  buildSidebar();
+  buildAllPages();
+  showPage(state.currentPage||'dashboard');
+  earnBadge('started');
+  updateProgress();
+}
+
+function buildStars(){
+  const c=document.getElementById('starsContainer');
+  if(!c||c.children.length>0)return;
+  for(let i=0;i<80;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*3+1;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${2+Math.random()*4}s;--delay:${Math.random()*5}s;--op:${0.4+Math.random()*0.6}`;c.appendChild(s)}
+}
+window.addEventListener('DOMContentLoaded',buildStars);
+
+/* ================================================================
+   SIDEBAR
+================================================================ */
+function buildSidebar(){
+  const list=document.getElementById('nav-list');
+  let lastPart='';
+  CHAPTERS_DATA.forEach(ch=>{
+    if(ch.special)return;
+    if(ch.part&&ch.part!==lastPart){
+      const div=document.createElement('div');div.className='nav-part-label';div.textContent=ch.part;list.appendChild(div);lastPart=ch.part;
+    }
+    const item=document.createElement('div');item.className=`chapter-nav-item ${state.completedChapters[ch.id]?'completed':''}`;item.id=`nav-${ch.id}`;item.onclick=()=>showPage(ch.id);
+    item.innerHTML=`<div class="nav-dot"></div><div><div class="nav-label">${ch.title}</div>${ch.num?`<div style="font-size:0.65rem;color:#94A3B8">${ch.num}</div>`:''}</div><span class="nav-grade">4–12</span>`;
+    list.appendChild(item);
+  });
+}
+
+/* ================================================================
+   SHOW PAGE
+================================================================ */
+function showPage(id){
+  state.currentPage=id;
+  document.querySelectorAll('.chapter-page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.chapter-nav-item').forEach(n=>n.classList.remove('active'));
+  const page=document.getElementById(`page-${id}`);
+  if(page){page.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  const nav=document.getElementById(`nav-${id}`);
+  if(nav)nav.classList.add('active');
+  const ch=CHAPTERS_DATA.find(c=>c.id===id);
+  if(ch)document.getElementById('tb-chapter-label').textContent=ch.num||ch.title;
+  saveState();
+}
+
+function goNext(nextId){
+  markComplete(state.currentPage);
+  showPage(nextId);
+}
+
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  sb.style.display=sb.style.display==='none'?'block':'none';
+}
+
+/* ================================================================
+   PROGRESS & BADGES
+================================================================ */
+function markComplete(id){
+  if(!state.completedChapters[id]){
+    state.completedChapters[id]=true;
+    const nav=document.getElementById(`nav-${id}`);if(nav)nav.classList.add('completed');
+    updateProgress();checkMilestones();saveState();
+  }
+}
+
+function updateProgress(){
+  const total=CHAPTERS_DATA.filter(c=>!c.special).length;
+  const done=Object.keys(state.completedChapters).length;
+  const pct=Math.round((done/total)*100);
+  state.totalProgress=pct;
+  document.querySelectorAll('.prog-bar-fill').forEach(el=>el.style.width=pct+'%');
+  document.querySelectorAll('.prog-pct').forEach(el=>el.textContent=pct+'%');
+  document.querySelectorAll('.dash-chapters-val').forEach(el=>el.textContent=done);
+  document.querySelectorAll('.dash-badges-val').forEach(el=>el.textContent=Object.keys(state.badges).length);
+  const tbFill=document.getElementById('tb-fill');if(tbFill)tbFill.style.width=pct+'%';
+  const tbPct=document.getElementById('tb-pct');if(tbPct)tbPct.textContent=pct+'%';
+  renderBadgesGrid();
+  updateDashCards();
+}
+
+function checkMilestones(){
+  const done=Object.keys(state.completedChapters).length;
+  if(done>=2)earnBadge('mindset');
+  if(done>=Math.ceil(CHAPTERS_DATA.filter(c=>!c.special).length/2))earnBadge('halfway');
+  if(done>=CHAPTERS_DATA.filter(c=>!c.special).length)earnBadge('complete');
+  if(state.completedChapters['chapter-5'])earnBadge('boundary');
+  if(state.completedChapters['chapter-8'])earnBadge('compass');
+  if(state.completedChapters['digital-crisis'])earnBadge('digital');
+}
+
+function earnBadge(id){
+  if(state.badges[id])return;
+  const badge=BADGES_DATA.find(b=>b.id===id);if(!badge)return;
+  state.badges[id]=new Date().toISOString();
+  updateProgress();showBadgeModal(badge);saveState();
+}
+
+function showBadgeModal(b){
+  document.getElementById('bm-emoji').textContent=b.emoji;
+  document.getElementById('bm-name').textContent=b.name;
+  document.getElementById('bm-desc').textContent=b.desc;
+  document.getElementById('badge-modal').classList.add('show');
+}
+function closeBadgeModal(){document.getElementById('badge-modal').classList.remove('show')}
+
+function renderBadgesGrid(){
+  const g=document.getElementById('badges-page-grid');if(!g)return;
+  g.innerHTML=BADGES_DATA.map(b=>{
+    const e=!!state.badges[b.id];
+    return`<div class="badge-item ${e?'earned':''}"><span class="badge-emoji">${b.emoji}</span><div class="badge-name">${b.name}</div><div class="badge-desc">${e?b.desc:'Keep going to unlock!'}</div></div>`;
+  }).join('');
+}
+
+function updateDashCards(){
+  const area=document.getElementById('dash-cards');if(!area)return;
+  area.innerHTML=CHAPTERS_DATA.filter(c=>!c.special&&c.id!=='parent-guide'&&c.id!=='intro').map(ch=>{
+    const done=!!state.completedChapters[ch.id];
+    return`<div class="ch-card ${done?'completed':''}" onclick="showPage('${ch.id}')"><div class="cc-emoji">${ch.emoji}</div><div class="cc-num">${ch.num||'Section'}</div><div class="cc-title">${ch.title}</div><div class="cc-check">✓</div></div>`;
+  }).join('');
+}
+
+function showToast(msg,dur=3200){
+  const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),dur);
+}
+
+/* ================================================================
+   FRIES CAFÉ
+================================================================ */
+let cafeScenarioIndex=0;
+
+function selectFriesBoard(letter,el){
+  document.querySelectorAll('.menu-board').forEach(m=>m.classList.remove('selected'));
+  el.classList.add('selected');
+  const d=FRIES_DATA[letter];
+  const panel=document.getElementById('fries-detail');
+  panel.className='fries-detail show';
+  panel.innerHTML=`<div class="fd-title" style="color:${d.color}">${d.title}</div><div class="fd-body">${d.body}</div><div class="fd-examples"><div class="fd-ex-g">${d.ex_g}</div><div class="fd-ex-b">${d.ex_b}</div></div>`;
+}
+
+function renderFriesScenario(index){
+  const s=FRIES_SCENARIOS[index];
+  const area=document.getElementById('cafe-scenario-area');
+  if(!area)return;
+  if(!s){
+    area.innerHTML=`<div style="text-align:center;padding:28px;color:rgba(255,215,0,0.85)"><div style="font-size:2.8rem;margin-bottom:12px">🎉</div><div style="font-family:'Fredoka One';font-size:1.2rem;margin-bottom:8px">All Scenarios Complete!</div><div style="font-size:0.88rem;opacity:0.7">Score: ${state.cafeScore}/${FRIES_SCENARIOS.length} ${state.cafeScore===FRIES_SCENARIOS.length?'— Perfect! 🌟':''}</div></div>`;
+    if(state.cafeScore===FRIES_SCENARIOS.length)earnBadge('consent');
+    return;
+  }
+  const shuffled=[...s.choices].sort(()=>Math.random()-0.5);
+  area.innerHTML=`
+    <div class="scenario-box-outer">
+      <div class="scenario-tag">📋 Scenario ${index+1} of ${FRIES_SCENARIOS.length}</div>
+      <p class="scenario-text-p">${s.text}</p>
+      <div class="scenario-q">${s.q}</div>
+    </div>
+    <div class="choices-grid" id="choices-${index}">
+      ${shuffled.map(c=>`<button class="choice-btn" onclick="checkFries(${index},${s.choices.indexOf(c)},this)" data-correct="${c.correct}">${c.text}</button>`).join('')}
+    </div>
+    <div class="scenario-fb" id="fb-${index}"></div>
+    <button class="btn-cafe" id="next-btn-${index}" style="display:none;margin-top:12px" onclick="nextFriesScenario(${index})">Next Scenario →</button>
+  `;
+  const scoreEl=document.getElementById('cafe-score-val');
+  if(scoreEl)scoreEl.textContent=`${state.cafeScore} / ${FRIES_SCENARIOS.length}`;
+}
+
+function checkFries(idx,choiceIdx,btn){
+  const s=FRIES_SCENARIOS[idx];const correct=s.choices[choiceIdx].correct;
+  document.querySelectorAll(`#choices-${idx} .choice-btn`).forEach(b=>{b.disabled=true;if(b.dataset.correct==='true')b.classList.add('correct')});
+  if(!correct)btn.classList.add('incorrect');
+  const fb=document.getElementById(`fb-${idx}`);
+  if(fb){fb.className=`scenario-fb show ${correct?'fb-good':'fb-bad'}`;fb.textContent=correct?s.good:s.bad}
+  if(correct&&!state.cafeCompleted[`s${idx}`]){state.cafeCompleted[`s${idx}`]=true;state.cafeScore++;const sv=document.getElementById('cafe-score-val');if(sv)sv.textContent=`${state.cafeScore} / ${FRIES_SCENARIOS.length}`;saveState()}
+  const nb=document.getElementById(`next-btn-${idx}`);if(nb)nb.style.display='inline-flex';
+}
+
+function nextFriesScenario(cur){cafeScenarioIndex=cur+1;renderFriesScenario(cafeScenarioIndex)}
+
+function resetCafe(){state.cafeScore=0;state.cafeCompleted={};cafeScenarioIndex=0;renderFriesScenario(0);const sv=document.getElementById('cafe-score-val');if(sv)sv.textContent=`0 / ${FRIES_SCENARIOS.length}`;saveState()}
+
+/* ================================================================
+   MATCH COMPASS
+================================================================ */
+let matchChecks={};
+
+function selectMatchLetter(letter){
+  document.querySelectorAll('.ml-card').forEach(c=>c.classList.remove('active'));
+  const card=document.getElementById(`ml-${letter}`);if(card)card.classList.add('active');
+  const d=MATCH_DATA[letter];
+  const panel=document.getElementById('match-detail-panel');
+  if(panel){panel.className='match-detail-panel show';panel.innerHTML=`<div class="mdp-title" style="color:${d.color}">${d.title}</div><div class="mdp-body">${d.body}</div>`}
+  const wrap=document.getElementById('compass-svg-wrap');
+  if(wrap){wrap.classList.add('compass-spinning');setTimeout(()=>wrap.classList.remove('compass-spinning'),700)}
+}
+
+function renderMatchScenario(idx){
+  const sc=MATCH_SCENARIOS[idx];
+  const area=document.getElementById('match-scenario-area');if(!area)return;
+  const key=`ms-${idx}`;const isDone=!!state.matchDone[key];
+  area.innerHTML=`
+    <div class="ms-card">
+      <div style="font-size:0.68rem;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:rgba(246,204,0,0.7);margin-bottom:7px">📍 ${sc.title}</div>
+      <div class="ms-situation">${sc.situation}</div>
+      <div class="ms-run">Run Your MATCH Compass:</div>
+      <div class="ms-checks">
+        ${sc.checks.map((c,i)=>`<div class="ms-check-item ${isDone?'checked':''}" onclick="toggleMsCheck(this,'${key}',${i},${sc.checks.length})" data-i="${i}"><div class="ms-check-box">${isDone?'✓':''}</div><span class="ms-check-letter">${c.l}</span><span class="ms-check-text">${c.t}</span></div>`).join('')}
+      </div>
+    </div>
+    <div class="ms-result ${isDone?'show':''}" id="msr-${idx}">${sc.result}</div>
+  `;
+  if(!matchChecks[key])matchChecks[key]=new Set();
+  if(isDone)for(let i=0;i<sc.checks.length;i++)matchChecks[key].add(i);
+}
+
+function toggleMsCheck(el,key,idx,total){
+  el.classList.toggle('checked');const checked=el.classList.contains('checked');
+  el.querySelector('.ms-check-box').textContent=checked?'✓':'';
+  if(!matchChecks[key])matchChecks[key]=new Set();
+  if(checked)matchChecks[key].add(idx);else matchChecks[key].delete(idx);
+  if(matchChecks[key].size===total){
+    state.matchDone[key]=true;
+    const r=document.getElementById(`msr-${key.split('-')[1]}`);if(r)r.className='ms-result show';
+    earnBadge('compass');saveState();
+  }
+}
+
+/* ================================================================
+   PROMISE
+================================================================ */
+function bindPromise(){
+  const btn=document.getElementById('promise-btn');
+  const nameInput=document.getElementById('promise-name');
+  if(!btn)return;
+  if(state.promiseSigned){btn.textContent='✦ Promise Sealed — You Are CAPE ✦';btn.classList.add('signed');if(nameInput&&state.promiseName)nameInput.value=state.promiseName}
+  btn.addEventListener('click',()=>{
+    const name=nameInput?nameInput.value.trim():'';
+    state.promiseSigned=true;state.promiseName=name;
+    btn.textContent='✦ Promise Sealed — You Are CAPE ✦';btn.classList.add('signed');
+    earnBadge('promise');showToast('✦ Your CAPE Promise is sealed. You are a leader!');saveState();
+  });
+}
+
+/* ================================================================
+   JOURNAL BINDING
+================================================================ */
+function bindJournals(){
+  document.querySelectorAll('.prompt-textarea').forEach(ta=>{
+    const k=ta.dataset.key;if(k&&state.journalEntries[k])ta.value=state.journalEntries[k];
+    ta.addEventListener('input',()=>{if(k){state.journalEntries[k]=ta.value;saveState()}});
+  });
+}
+
+/* ================================================================
+   CHALLENGE
+================================================================ */
+function toggleChallenge(el,i){
+  if(!state.challengeItems)state.challengeItems={};
+  state.challengeItems[i]=!state.challengeItems[i];
+  const d=state.challengeItems[i];
+  el.style.background=d?'rgba(76,175,130,0.1)':'#F8F9FA';
+  el.style.borderColor=d?'var(--cape-green)':'transparent';
+  const dot=el.querySelector('div');dot.style.background=d?'var(--cape-green)':'white';dot.style.borderColor=d?'var(--cape-green)':'#CBD5E0';dot.textContent=d?'✓':'';
+  el.querySelector('span').style.color=d?'var(--cape-green)':'var(--text-dark)';
+  if(Object.values(state.challengeItems).filter(Boolean).length===8)showToast('🌟 30-Day CAPE Challenge complete! You are a leader!');
+  saveState();
+}
+
+/* ================================================================
+   PAGE HELPERS
+================================================================ */
+function navRow(prev,next){
+  return`<div class="nav-row">${prev?`<button class="btn-prev" onclick="showPage('${prev}')">← Previous</button>`:'<div></div>'}<button class="btn-next" onclick="${next?`goNext('${next}')`:`showPage('dashboard')`}">${next?'Next Chapter →':'Back to Dashboard 🏠'}</button></div>`;
+}
+
+/* ================================================================
+   BUILD ALL PAGES
+================================================================ */
+function buildAllPages(){
+  const area=document.getElementById('content-area');
+  area.innerHTML=buildDashboard()+buildParentGuide()+buildIntro()+buildCh1()+buildCh2()+buildCh3()+buildCh4()+buildCh5()+buildCh6()+buildCh7()+buildCh8()+buildCh9()+buildDigitalCrisis()+buildResources()+buildGlossary()+buildAbout()+buildBadgesPage();
+  // Init interactive elements after DOM is ready
+  setTimeout(()=>{
+    bindJournals();
+    bindPromise();
+    renderFriesScenario(0);
+    renderMatchScenario(0);
+    updateDashCards();
+    renderBadgesGrid();
+    updateProgress();
+  },50);
+}
+
+/* ================================================================
+   DASHBOARD
+================================================================ */
+function buildDashboard(){
+  return`<div id="page-dashboard" class="chapter-page">
+    <div class="dash-hero">
+      <div class="dash-greeting">Your Personal Power Manual</div>
+      <h1 class="dash-title">CAPE Youth Edition<br><span style="color:var(--cape-gold)">Confident. Aware. Protected. Empowered.</span></h1>
+      <p class="dash-tagline">A complete middle and high school curriculum replacing fear with agency, focusing on 30-day habits and legacy building.</p>
+      <div class="dash-stats">
+        <div><div class="dash-stat-num dash-chapters-val">0</div><div class="dash-stat-label">Chapters Done</div></div>
+        <div><div class="dash-stat-num dash-badges-val">0</div><div class="dash-stat-label">Badges Earned</div></div>
+        <div><div class="dash-stat-num prog-pct">0%</div><div class="dash-stat-label">Complete</div></div>
+      </div>
+    </div>
+    <div class="cb" style="margin-bottom:18px">
+      <div class="prog-label-row" style="margin-bottom:8px"><span style="font-weight:900;font-size:0.88rem">Overall Progress</span><span class="prog-pct" style="color:var(--cape-green);font-weight:900">0%</span></div>
+      <div class="prog-bar-track" style="height:13px"><div class="prog-bar-fill" style="width:0%"></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px">
+      <div class="cb" style="padding:18px;cursor:pointer;margin-bottom:0" onclick="showPage('parent-guide')"><div style="font-size:1.6rem;margin-bottom:7px">👋</div><div style="font-weight:900;font-size:0.88rem">Parent & Educator Guide</div><div style="font-size:0.75rem;color:var(--text-mid);margin-top:3px">TEKS alignment, conversation starters</div></div>
+      <div class="cb" style="padding:18px;cursor:pointer;margin-bottom:0" onclick="showPage('intro')"><div style="font-size:1.6rem;margin-bottom:7px">🌟</div><div style="font-weight:900;font-size:0.88rem">Introduction for Youth</div><div style="font-size:0.75rem;color:var(--text-mid);margin-top:3px">Start here — your power manual</div></div>
+    </div>
+    <div class="section-sep"><div class="sep-line"></div><div class="sep-label">Chapters</div><div class="sep-line"></div></div>
+    <div class="chapter-cards" id="dash-cards"></div>
+    <div class="section-sep"><div class="sep-line"></div><div class="sep-label">Tools & Appendix</div><div class="sep-line"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:28px">
+      ${[['digital-crisis','📱','Digital Crisis Protocol'],['resources','🆘','Crisis Resources'],['glossary','📖','Glossary'],['about','👤','About the Author'],['badges','🏆','My Achievements']].map(([id,em,label])=>`<div class="cb" style="padding:16px;cursor:pointer;text-align:center;margin-bottom:0" onclick="showPage('${id}')"><div style="font-size:1.8rem;margin-bottom:7px">${em}</div><div style="font-weight:900;font-size:0.78rem">${label}</div></div>`).join('')}
+    </div>
+  </div>`;
+}
+
+/* ================================================================
+   PARENT & EDUCATOR GUIDE
+================================================================ */
+function buildParentGuide(){
+  return`<div id="page-parent-guide" class="chapter-page">
+    <div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#1a3060,#2C5F8D);--hero-icon:'📚'">
+      <div class="hero-part">Welcome</div>
+      <h1 class="hero-title">Parent & Educator Guide</h1>
+      <div class="grade-pills"><span class="grade-pill">For Adults Supporting Youth</span></div>
+    </div>
+    <div class="cb">
+      <h2>Welcome</h2>
+      <p>Thank you for using the CAPE Youth Edition! This guide is a supplemental resource created to support Texas TEKS Health Education Standards while delivering an empowering, non-judgmental, youth-centered approach. It works beautifully in classrooms, youth groups, after-school programs, homeschool co-ops, and at home.</p>
+      <div class="callout">CAPE reframes sexual health as a <strong>leadership identity</strong>, not a set of restrictive rules. The goal is to replace fear with agency — empowering young people to live Confident, Aware, Protected, and Empowered.</div>
+      <h3>📗 How to Use by Grade Band</h3>
+      <div class="ex ex-g"><strong>🟢 Elementary/Middle (Grades 4–8) — Green Track:</strong> Focus on Chapters 1–5. Emphasize mindset, communication, consent, boundaries, digital safety, and the power of waiting. Module 3 (Protection Shields) is age-gated for this track. Use the interactive worksheets heavily.</div>
+      <div class="ex ex-b"><strong>🔵 High School (Grades 9–12) — Blue Track:</strong> Full book. Add deeper discussion on Chapters 6–8 (frontline gear, medical shields, MATCH scenarios). Includes the full Biological Arsenal content and advanced medical options.</div>
+    </div>
+    <div class="cb">
+      <h2>Texas TEKS Alignment</h2>
+      <table class="teks-table">
+        <thead><tr><th>TEKS Standard</th><th>Grade Level</th><th>CAPE Chapters</th></tr></thead>
+        <tbody>
+          <tr><td>§115.23–115.24 — Puberty, healthy relationships, refusal skills, personal safety, digital citizenship</td><td>Middle School</td><td>Chapters 1–5</td></tr>
+          <tr><td>§115.35–115.38 — Abstinence priority, contraception basics, STI prevention, consent/boundaries, bystander intervention, vaccines</td><td>High School</td><td>All chapters</td></tr>
+          <tr><td>Abstinence presented as preferred & most effective choice</td><td>All grades</td><td>Chapters 1, 6, 8</td></tr>
+          <tr><td>Digital citizenship & online safety</td><td>All grades</td><td>Chapter 5, Digital Crisis Protocol</td></tr>
+          <tr><td>Bystander intervention & peer leadership</td><td>All grades</td><td>Chapters 3, 9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cb">
+      <h2>Conversation Starters for Families & Classrooms</h2>
+      <ul>
+        <li>"What does a real 'Heck Yes!' feel like to you — and how do you know the difference from an 'I guess'?"</li>
+        <li>"How can the 3-Second Rule help with texting or posting?"</li>
+        <li>"What's one boundary you want people to know about you?"</li>
+        <li>"Has someone ever respected a boundary you set? How did that feel?"</li>
+        <li>"How is consent like ordering at a café?"</li>
+        <li>"What does being 'fearless' mean to you — not fearless like nothing scares you, but fearless like you move through the fear anyway?"</li>
+        <li>"If you could share one thing with your younger self about healthy relationships, what would it be?"</li>
+        <li>"What's one healthy habit that protects your peace?"</li>
+        <li>"What does the 'power of waiting' mean for your goals right now?"</li>
+        <li>"What do you want your digital footprint to say about the kind of leader you are?"</li>
+      </ul>
+      <h3>🏠 Family Activities</h3>
+      <ul>
+        <li><strong>FRIES Dinner Game</strong> — Order imaginary food while practicing consent language ("Is everyone genuinely excited about pizza tonight?")</li>
+        <li><strong>MATCH Compass Role-Play Night</strong> — Use the printable cards to walk through real-life scenarios together</li>
+        <li><strong>3-Second Rule Phone Check</strong> — Before sending any family group chat message, model the rule together</li>
+        <li><strong>Legacy Vision Board</strong> — What does each family member want their digital footprint to show?</li>
+      </ul>
+    </div>
+    <div class="cb">
+      <h2>Opt-In & Parental Rights</h2>
+      <p>This material fully respects Texas parental consent laws for human sexuality instruction. Share the book with parents first. The Parent Guide can be used to facilitate open family conversations. All content is designed to complement — never replace — parent and guardian guidance.</p>
+      <div class="callout">Abstinence is consistently framed as the only 100% effective protection and as the ultimate power move and leadership choice — never as a restriction or lack of options.</div>
+      <h3>⚠️ When to Seek Extra Support</h3>
+      <p>Red-flag language, persistent pressure, or safety concerns → Contact school counselor, <strong>Texas Child Protective Services (1-800-252-5400)</strong>, or local crisis lines listed in the Resources Appendix. If a young person mentions pressure, non-consensual sharing of images, or feeling unsafe, connect right away.</p>
+    </div>
+    ${navRow(null,'intro')}
+  </div>`;
+}
+
+/* ================================================================
+   INTRO
+================================================================ */
+function buildIntro(){
+  return`<div id="page-intro" class="chapter-page">
+    <div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#FF6B35,#DD0E6E);--hero-icon:'🌟'">
+      <div class="hero-part">Welcome</div>
+      <h1 class="hero-title">Introduction for Youth</h1>
+      <div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+    </div>
+    <div class="cb">
+      <div style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--cape-orange);margin-bottom:18px;font-style:italic">Hey — yes, YOU.</div>
+      <p>Welcome to the CAPE Youth Edition. This isn't another boring health book with checklists and warnings. <strong>This is your personal power manual.</strong></p>
+      <p>Inside these pages you'll discover how to:</p>
+      <ul>
+        <li>Own your health and respect your body like the leader you are</li>
+        <li>Use your voice with courage (the Consent Café makes it fun and unforgettable)</li>
+        <li>Set boundaries that protect your peace — physical, emotional, and digital</li>
+        <li>Make smart, fearless decisions with the MATCH Compass</li>
+        <li>Stay confident, healthy, and in control — on your terms</li>
+      </ul>
+      <p>Whether you're in middle school figuring out friendships and group chats, or in high school navigating bigger choices, this guide meets you exactly where you are.</p>
+      <div class="callout">The best part? Everything here is designed <em>for you</em> — not to scare you, not to judge you, but to empower you. Choosing to wait? Powerful. Speaking up? Powerful. Protecting your digital legacy? Powerful.</div>
+      <div class="takeaway">
+        <p>Turn the page. Your CAPE journey starts now. You've got this. And the world is going to be better because you do.<br><br><strong>— The CAPE Team</strong></p>
+      </div>
+    </div>
+    ${navRow('parent-guide','chapter-1')}
+  </div>`;
+}
+
+/* ================================================================
+   CHAPTER 1
+================================================================ */
+function buildCh1(){
+  return`<div id="page-chapter-1" class="chapter-page">
+    <div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#4CAF82,#2E8B57);--hero-icon:'💪'">
+      <div class="hero-part">Part I — Building Your CAPE Mindset</div>
+      <div class="hero-num">Chapter 1</div>
+      <h1 class="hero-title">Own Your Health — Respect Starts with You</h1>
+      <div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+    </div>
+    <div class="cb">
+      <p>Your health is the foundation of everything you want to do in life — playing sports, crushing school, building friendships, and chasing big dreams. When you decide to respect your body and mind first, you unlock real freedom and confidence. This isn't about rules or restrictions. <strong>It's about owning your health so you can live on your own terms.</strong></p>
+      <h3>🌱 Self-Care Is the Starting Line</h3>
+      <p>Taking care of your body is one of the most powerful ways to show yourself love. Simple daily habits create the confidence that carries you through anything:</p>
+      <ul>
+        <li>Eating foods that give you energy</li>
+        <li>Moving your body in ways that feel good (sports, dance, walks)</li>
+        <li>Getting enough sleep so your brain and body recharge</li>
+        <li>Regular check-ups with your doctor or school nurse — just like a car needs oil changes</li>
+      </ul>
+      <div class="ex ex-g">You notice you feel better after a good night's sleep, so you protect that time on school nights.</div>
+      <div class="ex ex-b">You schedule your annual physical even when you feel fine — because prevention is power.</div>
+      <h3>🔄 Puberty & Body Changes — What to Expect</h3>
+      <p>Your body is going through (or will go through) natural changes. Growth spurts, voice changes, acne, body hair, periods, mood shifts — all completely normal and exciting. Your emotions can feel bigger — that's your brain rewiring for adulthood. Talk to a trusted adult or doctor about anything that feels confusing. <strong>Knowledge takes the worry out.</strong></p>
+      <h3>⭐ Self-Worth Is the Fuel</h3>
+      <p>When you see your own value, protecting yourself becomes easy and natural — not because you're scared, but because you know you're worth it. You are smart. You are capable. You are important. Your future is wide open.</p>
+      <h3>🏆 Choosing Your Pace — The Power of Waiting</h3>
+      <div class="callout">Here's the truth that gives you total freedom: Choosing to wait (abstinence) is the only 100% effective way to prevent pregnancy, STIs, and the emotional stress that can come with closer physical contact too soon. Waiting is not "missing out." <strong>Waiting is the ultimate power move.</strong></div>
+      <p>Benefits of choosing your pace:</p>
+      <ul>
+        <li>Zero risk of pregnancy or STIs</li>
+        <li>More time for sports, grades, hobbies, and real friendships</li>
+        <li>Stronger self-respect and clearer decision-making</li>
+        <li>Healthier emotional life — no heartbreak from rushing</li>
+      </ul>
+      <div class="ex ex-g">You decide "I'm choosing to wait until I'm older and truly ready" — and suddenly you feel lighter. No pressure, just you in control.</div>
+      <div class="ex ex-b">Friends talk about relationships, and you confidently say, "I'm focusing on my goals and waiting — that's my choice and I'm proud of it."</div>
+      <div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Owning your health powers the <strong>M</strong> (My Medical Choices) and <strong>H</strong> (Healthy Habits) in your MATCH Compass. When you respect yourself first, every other tool becomes backup — not a crutch. Real leaders choose their pace. You are one of them.</p></div>
+    </div>
+    <div class="worksheet">
+      <div class="ws-header"><div class="ws-icon">📝</div><div><div class="ws-title">My Health Promise & Body-Respect Journal</div><div class="ws-sub">Responses auto-saved to this device</div></div></div>
+      <div class="journal-prompt"><div class="prompt-num">My Health Promise</div><div class="prompt-text">I promise to respect my body by: (fill in one daily habit)</div><textarea class="prompt-textarea" data-key="j-1-p1" placeholder="e.g., getting 8–9 hours of sleep, drinking water before reaching for a snack..."></textarea></div>
+
+```
+  <div class="journal-prompt"><div class="prompt-num">Journal Prompt 1</div><div class="prompt-text">What did I do today (or this week) that made my body or mind feel strong?</div><textarea class="prompt-textarea" data-key="j-1-p2" placeholder="Write your response here..."></textarea></div>
+  <div class="journal-prompt"><div class="prompt-num">Journal Prompt 2</div><div class="prompt-text">One change I'm noticing or expecting during puberty — and one question I'd ask a trusted adult:</div><textarea class="prompt-textarea" data-key="j-1-p3" placeholder="Write your response here..."></textarea></div>
+  <div class="journal-prompt"><div class="prompt-num">Journal Prompt 3</div><div class="prompt-text">How does choosing to wait give me more freedom right now?</div><textarea class="prompt-textarea" data-key="j-1-p4" placeholder="Write your response here..."></textarea></div>
+</div>
+${navRow('intro','chapter-2')}
+```
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 2
+================================================================ */
+function buildCh2(){
+return`<div id="page-chapter-2" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#2C5F8D,#4A90C4);--hero-icon:'💬'">
+<div class="hero-part">Part I — Building Your CAPE Mindset</div>
+<div class="hero-num">Chapter 2</div>
+<h1 class="hero-title">The Art of Courageous Communication</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+</div>
+<div class="cb">
+<p>You already have the foundation of self-respect. Now it’s time to build the bridge: communication. Your voice is your strongest everyday shield. When you can talk openly about your comfort, boundaries, and needs, you create trust and keep yourself safe in every relationship.</p>
+<p><strong>Silence might feel easier in the moment, but speaking up with courage protects your peace and shows others exactly how to treat you.</strong></p>
+<h3>💡 Why Healthy Conversations Matter</h3>
+<p>Talking about comfort and respect doesn’t ruin the vibe — it builds deeper, safer connections. It shows you value yourself and the other person.</p>
+<div class="ex ex-g">Telling a friend, “I need a break from this game” and they respect it — the friendship gets stronger, not weaker.</div>
+<div class="ex ex-b">Being able to say, “I’m not comfortable with that topic yet” without fear keeps relationships honest and healthy.</div>
+<h3>🗣 Scripts That Open Doors</h3>
+<p>Practice these until they feel natural — in the mirror, with a trusted adult, or with a close friend:</p>
+<div class="ex ex-g">“I’m only comfortable with high-fives today.”</div>
+<div class="ex ex-g">“Can we talk about what this plan actually includes?”</div>
+<div class="ex ex-b">“I want to make sure we’re on the same page about what feels good for both of us.”</div>
+<div class="ex ex-b">“I care about staying safe and respected — how do you feel about that too?”</div>
+<h3>🚦 Red Flag vs. Green Light Responses</h3>
+<p><strong>The power of listening:</strong> Does the other person respect your “no”? Do they get defensive or try to pressure you? Their response tells you everything about their character.</p>
+<div class="warn-box">⚠️ <strong>Red-flag responses:</strong> “You’re being dramatic,” “Everyone else is fine with it,” changing the subject, or using guilt. These are signals to use your MATCH Compass and create space.</div>
+<div class="callout">✅ <strong>Green-light responses:</strong> “I hear you,” “Thank you for telling me,” or “Let’s do what feels right for both of us.” These show genuine respect.</div>
+<h3>🌐 Healthy Talk in Different Settings</h3>
+<ul>
+<li><strong>With friends or group chats:</strong> “I’m stepping away from this conversation for a bit.”</li>
+<li><strong>With family:</strong> “I need to talk about something that’s on my mind — do you have a few minutes?”</li>
+<li><strong>In any closer relationship:</strong> Use your FRIES skills (next chapter) and these scripts every single time.</li>
+</ul>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Courageous communication powers the <strong>C</strong> (Clear Communication & Consent) in your MATCH Compass. When you combine your voice with self-respect, you become unstoppable.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">🗣</div><div><div class="ws-title">Communication Script Builder</div><div class="ws-sub">Build your own boundary-setting scripts — saved automatically</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">Script 01 — Setting a Boundary</div><div class="prompt-text">A boundary I want to set with a friend or in a group situation:</div><textarea class="prompt-textarea" data-key="j-2-p1" placeholder="My script: 'I'm not comfortable with...'"></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Script 02 — Asking for Clarity</div><div class="prompt-text">A situation where I’d want more information before agreeing:</div><textarea class="prompt-textarea" data-key="j-2-p2" placeholder="My script: 'Before I say yes, I need to know...'"></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Listening Check</div><div class="prompt-text">Think of a recent conversation. Did both people feel heard? What would make it even better next time?</div><textarea class="prompt-textarea" data-key="j-2-p3" placeholder="Write your reflection here..."></textarea></div>
+</div>
+${navRow(‘chapter-1’,‘chapter-3’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 3
+================================================================ */
+function buildCh3(){
+return`<div id="page-chapter-3" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#DD0E6E,#FF6B9D);--hero-icon:'❤️'">
+<div class="hero-part">Part II — Healthy Connections</div>
+<div class="hero-num">Chapter 3</div>
+<h1 class="hero-title">Healthy vs. Unhealthy Relationships & Red Flags</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+</div>
+<div class="cb">
+<p>The people you spend time with can lift you up or quietly pull you down. Learning to tell the difference is one of the smartest skills you can develop — it protects your peace, your confidence, and your future.</p>
+<h3>🟢 The Green Light Zone — What Healthy Relationships Feel Like</h3>
+<p>In a truly healthy relationship (with friends, teammates, classmates, or any future romantic connection) you will usually feel:</p>
+<ul>
+<li><strong>Respected</strong> — Your “no,” your boundaries, and your feelings are always taken seriously.</li>
+<li><strong>Safe</strong> — You never have to worry about being pressured, embarrassed, or hurt.</li>
+<li><strong>Supported</strong> — They celebrate your wins and stand by you during tough days.</li>
+<li><strong>Free</strong> — You can still have other friends, hobbies, and time for yourself.</li>
+<li><strong>Equal</strong> — Decisions are made together; no one is the boss of everything.</li>
+<li><strong>Honest</strong> — You can talk openly and use your FRIES skills without fear.</li>
+<li><strong>Positive</strong> — Spending time together leaves you feeling good more often than not.</li>
+</ul>
+<h3>🚩 Red Flags — Warning Signs That Something Is Off</h3>
+<p>One red flag doesn’t always mean the end of a friendship, but several together are a clear signal to pause and get support from a trusted adult. Watch for:</p>
+<ul>
+<li>Trying to control who you hang out with or what you post online</li>
+<li>Extreme jealousy (“Why were you talking to them?”)</li>
+<li>Name-calling, teasing that hurts, or putting you down (“You’re too sensitive”)</li>
+<li>Guilt-tripping (“If you really cared about me you would…”)</li>
+<li>Keeping secrets from your parents or isolating you from other people</li>
+<li>Explosive anger, silent treatment, or throwing/breaking things when upset</li>
+<li>Pressuring you to do anything you’re not comfortable with — once or repeatedly</li>
+<li>Constantly checking your phone, location, or messages</li>
+</ul>
+<div class="callout">Trust your gut — if it feels wrong, it probably is. You deserve relationships that make you stronger, not smaller. You are never alone.</div>
+<h3>🦸 How to Be a Powerful Bystander</h3>
+<p>If you notice red flags with a friend:</p>
+<ul>
+<li>“Hey, I’ve been worried about you. You deserve to feel safe and happy.”</li>
+<li>“That didn’t look okay. Want to talk?”</li>
+<li>“I’m here for you. Let’s tell a trusted adult together if you want.”</li>
+</ul>
+<h3>📢 Scripts to Talk to a Trusted Adult</h3>
+<ul>
+<li>“Something feels off in my friend’s relationship — can we talk?”</li>
+<li>“I’m being pressured and I don’t know what to do.”</li>
+<li>“I saw something that worried me and I need advice.”</li>
+</ul>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Spotting healthy vs. unhealthy relationships powers the <strong>A</strong> (Awareness) and <strong>C</strong> (Clear Communication) in your MATCH Compass. It keeps you confident and protected in every area of life.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">🔍</div><div><div class="ws-title">Relationship Reflection</div><div class="ws-sub">Think about the relationships in your life right now</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">My Healthy Relationship Vision</div><div class="prompt-text">What does a friendship or relationship that helps me live my CAPE life look like?</div><textarea class="prompt-textarea" data-key="j-3-p1" placeholder="Write your vision here..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">My Trusted Adults List (3–5 people)</div><div class="prompt-text">Write down first names or roles of people you can reach out to if something feels wrong:</div><textarea class="prompt-textarea" data-key="j-3-p2" placeholder="1. ___  2. ___  3. ___  4. ___  5. ___"></textarea></div>
+</div>
+${navRow(‘chapter-2’,‘chapter-4’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 4 — CONSENT CAFÉ
+================================================================ */
+function buildCh4(){
+const menuBoards=Object.values(FRIES_DATA).map(d=>` <div class="menu-board mb-${d.letter.toLowerCase()}" onclick="selectFriesBoard('${d.letter}',this)"> <div class="mb-food">${d.food}</div> <div class="mb-letter-circle">${d.letter}</div> <div class="mb-word">${d.word}</div> <div class="mb-desc">${d.body.split('<br>')[0].substring(0,65)}…</div> </div>`).join(’’);
+
+return`<div id="page-chapter-4" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#3d1a00,#6B2D00);--hero-icon:'☕'">
+<div class="hero-part">Part II — Healthy Connections</div>
+<div class="hero-num">Chapter 4</div>
+<h1 class="hero-title">The Heart of Respect — Consent & The FRIES Café</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+</div>
+
+```
+<!-- THE CONSENT CAFÉ — ILLUSTRATED INTERACTIVE INFOGRAPHIC -->
+<div class="consent-cafe">
+  <!-- Neon Sign -->
+  <div class="neon-sign-wrap">
+    <div class="neon-sign">
+      <div class="neon-title">The Consent Café</div>
+      <div class="neon-subtitle">How to Order Respectful Connections</div>
+    </div>
+    <div class="neon-cups">☕ ☕ ☕ ☕ ☕</div>
+  </div>
+  <div class="checker-strip"></div>
+  <!-- 5 Menu Boards -->
+  <div class="menu-boards-row">${menuBoards}</div>
+  <!-- Detail Panel -->
+  <div class="cafe-booth">
+    <div class="fries-detail" id="fries-detail">
+      <div style="text-align:center;color:rgba(255,215,0,0.6);font-size:0.88rem;padding:12px">👆 Tap a menu board above to explore each FRIES principle</div>
+    </div>
+    <!-- Customer Satisfaction Guarantee -->
+    <div style="background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);border-radius:var(--radius-md);padding:16px 18px;margin-bottom:16px">
+      <div style="font-family:'Fredoka One',sans-serif;font-size:1rem;color:#FFD700;margin-bottom:8px">🍽 Customer Satisfaction Guarantee</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px">
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 12px;font-size:0.8rem;color:rgba(255,255,255,0.75);line-height:1.5"><strong style="color:#FFD700;display:block;margin-bottom:4px">The "Send It Back" Rule</strong>If the vibe shifts, the "kitchen" must stop immediately — no questions asked.</div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 12px;font-size:0.8rem;color:rgba(255,255,255,0.75);line-height:1.5"><strong style="color:#FFD700;display:block;margin-bottom:4px">You Are the Customer</strong>You have the right to leave the restaurant or change the order at any time, for any reason. No guilt-tripping — ever.</div>
+        <div style="background:rgba(255,255,255,0.04);border-radius:8px;padding:10px 12px;font-size:0.8rem;color:rgba(255,255,255,0.75);line-height:1.5"><strong style="color:#FFD700;display:block;margin-bottom:4px">Consent is a Dialogue</strong>Not a one-time checkbox. It's ongoing. Every new moment is a new order.</div>
+      </div>
+    </div>
+    <!-- Scenario Quiz -->
+    <div style="border-top:1px solid rgba(255,215,0,0.15);padding-top:16px">
+      <div style="font-family:'Fredoka One',sans-serif;font-size:1rem;color:rgba(255,215,0,0.8);margin-bottom:4px">🎮 Practice Scenarios</div>
+      <div class="cafe-score-bar"><span class="cafe-score-txt">Score: <span id="cafe-score-val">${state.cafeScore} / ${FRIES_SCENARIOS.length}</span></span><button class="btn-cafe" onclick="resetCafe()">↻ Restart</button></div>
+      <div id="cafe-scenario-area"></div>
+    </div>
+  </div>
+  <div class="booth-floor"></div>
+</div>
+
+<div class="cb">
+  <p>Consent applies to every relationship in your life — not just romantic ones. Sharing a secret, borrowing someone's stuff, posting a photo of someone, asking for a hug — all of these work better when FRIES is the standard.</p>
+  <div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Practicing the Consent Café in all your relationships powers the <strong>C</strong> in your MATCH Compass: Clear Communication & Consent. It makes you a confident leader who respects others and protects your own peace.</p></div>
+</div>
+<div class="worksheet">
+  <div class="ws-header"><div class="ws-icon">📋</div><div><div class="ws-title">Build Your Boundary Menu</div><div class="ws-sub">Your personal "restaurant menu" — what you're comfortable serving</div></div></div>
+  <div class="journal-prompt"><div class="prompt-num">Appetizers (Everyday interactions — group activities, sharing stuff)</div><div class="prompt-text">What am I comfortable with in everyday friend interactions?</div><textarea class="prompt-textarea" data-key="j-4-p1" placeholder="e.g., Group hugs are okay, but I prefer high-fives with people I don't know well..."></textarea></div>
+  <div class="journal-prompt"><div class="prompt-num">Things I Do Not Serve (My firm limits)</div><div class="prompt-text">What are things I will always say no to, no matter what?</div><textarea class="prompt-textarea" data-key="j-4-p2" placeholder="e.g., I never share private messages, I never let anyone pressure me into..."></textarea></div>
+</div>
+${navRow('chapter-3','chapter-5')}
+```
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 5 — BOUNDARY SHIELD
+================================================================ */
+function buildCh5(){
+return`<div id="page-chapter-5" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#7B4FBF,#9B6FDF);--hero-icon:'🛡'">
+<div class="hero-part">Part II — Healthy Connections</div>
+<div class="hero-num">Chapter 5</div>
+<h1 class="hero-title">The Boundary Shield — Physical, Emotional & Digital</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+</div>
+<div class="cb">
+<p>Boundaries are like an invisible force field that keeps your energy safe while still letting the good stuff in. They are not walls to push people away — they are clear instructions that teach others exactly how to respect you.</p>
+<h3>🤝 Physical Boundaries — Protecting Your Body and Personal Space</h3>
+<p>Your body belongs to you. You get to decide who touches you, how, and when. Healthy physical boundaries include saying no to rough play that doesn’t feel fun, keeping private body areas private, and choosing when (and if) you want closer contact.</p>
+<div class="ex ex-g">A friend wants a hug after a game. You can say, “I’m good with a high-five today” — and that’s perfect.</div>
+<div class="ex ex-b">Someone tries to put their arm around you or get too close. You have the right to step back and say, “I need a little space right now.”</div>
+<h3>💛 Emotional Boundaries — Protecting Your Heart and Mind</h3>
+<p>Your feelings, secrets, and energy are precious. You decide what you share and with whom. Emotional boundaries help you avoid taking on other people’s problems as your own, say “no” to helping when you’re already overwhelmed, and walk away from conversations that make you feel bad about yourself.</p>
+<div class="ex ex-g">A classmate keeps asking super personal questions about your family. You can smile and say, “I’d rather not talk about that.”</div>
+<div class="ex ex-b">Someone shares drama or negative talk that drains you. You can say, “I care about you, but I need to protect my peace right now.”</div>
+<h3>📱 Digital Boundaries — Protecting Your Online World and Legacy</h3>
+<div style="background:linear-gradient(135deg,rgba(123,79,191,0.12),rgba(44,95,141,0.08));border-radius:var(--radius-md);padding:20px 22px;margin:14px 0">
+<div style="font-weight:900;font-size:1rem;color:var(--cape-purple);margin-bottom:10px">⏱ The 3-Second Rule — Your Quick Safety Check</div>
+<p style="font-size:0.93rem;color:var(--text-mid);margin-bottom:8px">Before you hit “send,” “post,” or “share,” pause for three seconds and ask yourself:</p>
+<ol style="padding-left:20px;color:var(--text-mid);font-size:0.93rem;line-height:1.9">
+<li>Do I trust this person with my legacy?</li>
+<li>Would I be okay if this showed up on a billboard or my future college/job application?</li>
+<li>Is this Freely Given, Informed, and Specific (using FRIES)?</li>
+</ol>
+<p style="font-size:0.88rem;color:var(--text-mid);margin-top:8px;margin-bottom:0"><strong>If the answer to any is “not sure,” don’t send it.</strong></p>
+</div>
+<div class="callout">Once something is sent, it can live forever — even if you delete it. You are the curator of your own digital museum. Only post or share things that make the future version of you proud.</div>
+<h3>🚫 Mute, Unfollow, Block — All Valid Superpowers</h3>
+<p>If someone’s posts, comments, or messages mess with your peace: <strong>Mute or unfollow</strong> (quiet and easy) or <strong>Block</strong> (strong and complete). You never owe anyone access to your digital space.</p>
+<div class="warn-box">🚨 <strong>Important Safety Note on Sharing Intimate Images</strong><br>Never send or ask for private photos or videos of anyone’s body — including your own. Even between friends, these can be shared without permission, cause serious harm, and may break laws. If you ever receive one: <strong>Stop → Delete → Tell a trusted adult immediately.</strong></div>
+<h3>🗣 Your Boundary Shield in Action — Real Scripts</h3>
+<div class="ex ex-g">“I’m not comfortable with that game — let’s play something else.”</div>
+<div class="ex ex-b">“I need space from this group chat right now. I’ll check back later.”</div>
+<div class="ex ex-g">“Please don’t share that photo of me. I changed my mind.”</div>
+<div class="ex ex-b">“Thank you for respecting my boundary — it means a lot.”</div>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Strong boundaries power the <strong>A</strong> (Awareness of Self) and <strong>C</strong> (Clear Communication) in your MATCH Compass. They work perfectly with the Consent Café and help you build the fearless, protected life you deserve.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">🛡</div><div><div class="ws-title">My Boundary Shield Worksheet</div><div class="ws-sub">Define your three shield layers</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">Physical Shield</div><div class="prompt-text">What touch or closeness feels good? What doesn’t?</div><textarea class="prompt-textarea" data-key="j-5-p1" placeholder="e.g., I'm okay with side-hugs from close friends, but not..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Emotional Shield</div><div class="prompt-text">Topics I share vs. topics I keep private:</div><textarea class="prompt-textarea" data-key="j-5-p2" placeholder="I'm comfortable sharing... but I keep private..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Digital Shield + 3-Second Rule Commitment</div><div class="prompt-text">Apps/accounts I protect + my personal 3-Second Rule pledge:</div><textarea class="prompt-textarea" data-key="j-5-p3" placeholder="Before I post or send, I will always ask myself..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Legacy Vision</div><div class="prompt-text">What do I want my digital footprint to say about the kind of leader I am?</div><textarea class="prompt-textarea" data-key="j-5-p4" placeholder="My digital legacy will show that I am..."></textarea></div>
+</div>
+${navRow(‘chapter-4’,‘chapter-6’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 6
+================================================================ */
+function buildCh6(){
+return`<div id="page-chapter-6" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#3D5A80,#5A80A0);--hero-icon:'⚙️'">
+<div class="hero-part">Part III — Protection Shields</div>
+<div class="hero-num">Chapter 6</div>
+<h1 class="hero-title">Barriers & Protection — Your Frontline Gear</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Overview</span><span class="grade-pill">🔵 Full Details — Blue Track</span></div>
+</div>
+<div class="cb">
+<div class="callout">Remember: Choosing to wait (abstinence) is still the only 100% effective way to avoid pregnancy, STIs, and emotional stress. The tools in this chapter are extra layers for those who are older and have decided the time is right for them.</div>
+<h3>🛡 Condoms & Barriers — Your Everyday Shield</h3>
+<div class="ex ex-g">Think of it like a waterproof jacket — it keeps the important stuff protected while you still live your life.</div>
+<div class="ex ex-b">External condoms (worn on the penis) and internal condoms (inserted into the vagina) are both options. Made of latex, polyurethane, or nitrile for people with latex allergies.</div>
+<h3>📊 Key Facts That Keep You in Control</h3>
+<ul>
+<li>When used correctly every time, external condoms are about <strong>98% effective</strong> at preventing pregnancy and greatly reduce the risk of most STIs.</li>
+<li>With typical real-life use, the number is closer to 87% for pregnancy prevention — still a strong layer when combined with other choices.</li>
+<li>They also protect against many skin-to-skin infections when used consistently as a barrier.</li>
+<li><strong>The Golden Rule:</strong> Use only one condom at a time. Using two (external + internal) actually makes them more likely to break due to friction.</li>
+</ul>
+<h3>✅ How to Use Them Right — The Basics</h3>
+<ul>
+<li>Check the expiration date and make sure the package isn’t damaged (look for the air bubble)</li>
+<li>Store them in a cool, dry place — not a wallet for long periods (heat and friction degrade latex)</li>
+<li>Open carefully so you don’t tear it — no teeth or scissors</li>
+<li>Put it on before any close contact begins — not partway through</li>
+<li>Use water-based or silicone-based lubricant if needed (never oil-based with latex — it breaks down the material)</li>
+<li>Hold the base when removing and dispose of it properly — never flush</li>
+</ul>
+<h3>🧤 Other Barrier Methods</h3>
+<p>Other protective barriers exist for specific kinds of close physical contact. These can include dental dams and gloves used in certain situations. Always ask a trusted healthcare provider which options are best for your specific needs — they can explain exactly how to use them safely without judgment.</p>
+<h3>🧠 The Real Superpower: Peace of Mind</h3>
+<p>The biggest benefit of using your Frontline Gear isn’t just the physical protection — it’s the mental freedom. When you know you’ve taken every smart step, you can relax, be present, and move through life without worry hiding in the back of your mind.</p>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Using Barriers & Protection powers the <strong>T</strong> (Tools & Trusted Support) in your MATCH Compass. Combined with your Consent Café skills, strong boundaries, and the choice to wait until you’re truly ready, these tools help you stay confident, healthy, and fully in charge of your story.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">✅</div><div><div class="ws-title">My Protection Plan</div><div class="ws-sub">Where you are right now and who supports you</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">My Current Choice</div><div class="prompt-text">Right now, my plan is: Waiting / Learning about tools for later. Explain in your own words:</div><textarea class="prompt-textarea" data-key="j-6-p1" placeholder="I am choosing... because..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">Trusted Adults & Resources</div><div class="prompt-text">Who are the trusted people I can talk to about health decisions? Where would I go for confidential help?</div><textarea class="prompt-textarea" data-key="j-6-p2" placeholder="1. ___  2. ___  Local clinic: ___"></textarea></div>
+</div>
+${navRow(‘chapter-5’,‘chapter-7’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 7
+================================================================ */
+function buildCh7(){
+return`<div id="page-chapter-7" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#1A6B5A,#28A779);--hero-icon:'🔬'">
+<div class="hero-part">Part III — Protection Shields</div>
+<div class="hero-num">Chapter 7</div>
+<h1 class="hero-title">Medical Shields — Science as Your Backup</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Overview</span><span class="grade-pill">🔵 Full Details — Blue Track</span></div>
+</div>
+<div class="cb">
+<div class="callout">Choosing to wait is still the only 100% effective way to prevent pregnancy, STIs, and the emotional stress that can come with closer physical contact too soon. That choice keeps you fully in control and is always a true CAPE leadership move.</div>
+<h3>💉 Vaccines — Your Easiest, Longest-Lasting Power-Ups</h3>
+<p>Vaccines are one of the smartest things you can do for your future health. They train your body to recognize and fight certain viruses before they ever have a chance to cause problems.</p>
+<ul>
+<li><strong>HPV Vaccine (Gardasil 9) — The Pre-Game Boost:</strong> Protects against the human papillomavirus that can lead to several types of cancer and genital warts. Recommended for both boys and girls starting between ages 11–12, but you can catch up later. Think of it as protection locked in for many years ahead.</li>
+<li><strong>Hepatitis B Vaccine — The Immunity Base:</strong> Lifelong protection for your liver against a virus spread through bodily fluids. Most people get it as babies, but if you haven’t had it, ask your doctor — it’s quick, safe, and highly effective.</li>
+<li><strong>Mpox Vaccine:</strong> Available for people at higher risk. Ask your doctor if it applies to your situation.</li>
+</ul>
+<div class="ex ex-g">Think of it like a sports physical — just making sure everything is strong and ready before the season starts.</div>
+<h3>🔍 Testing — Clarity and Confidence</h3>
+<p>Getting tested for certain infections isn’t about fear — it’s about staying informed and in control. Knowing your status gives you peace of mind and helps you make confident decisions. Testing is private, confidential, and often free or low-cost at local clinics and health departments.</p>
+<div class="ex ex-b">If you are ever sexually active, your doctor will talk with you about how often testing makes sense for your age and situation. Regular check-ups are part of taking care of yourself — like a tune-up for your health.</div>
+<h3>🔵 Advanced Medical Options — Talk to Your Doctor (High School)</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0">
+<div style="background:linear-gradient(135deg,rgba(0,189,189,0.08),rgba(44,95,141,0.06));border:1.5px solid rgba(0,189,189,0.2);border-radius:var(--radius-md);padding:16px">
+<div style="font-weight:900;color:var(--cape-teal);margin-bottom:6px">🛡 PrEP — The Daily Shield</div>
+<div style="font-size:0.85rem;color:var(--text-mid);line-height:1.55">Taken ahead of time to help prevent HIV acquisition in people at higher risk. Highly effective when taken consistently. Talk to your doctor about eligibility.</div>
+</div>
+<div style="background:linear-gradient(135deg,rgba(255,107,53,0.08),rgba(221,14,110,0.05));border:1.5px solid rgba(255,107,53,0.2);border-radius:var(--radius-md);padding:16px">
+<div style="font-weight:900;color:var(--cape-orange);margin-bottom:6px">⏱ PEP — The Emergency Brake</div>
+<div style="font-size:0.85rem;color:var(--text-mid);line-height:1.55">Started quickly (within 72 hours) after a possible HIV exposure to stop infection from taking hold. Every hour counts — know where to go before you need it.</div>
+</div>
+<div style="background:linear-gradient(135deg,rgba(246,204,0,0.08),rgba(123,79,191,0.05));border:1.5px solid rgba(246,204,0,0.2);border-radius:var(--radius-md);padding:16px">
+<div style="font-weight:900;color:#C17C00;margin-bottom:6px">🔬 Doxy-PEP — Bacterial Backup</div>
+<div style="font-size:0.85rem;color:var(--text-mid);line-height:1.55">Can stop bacterial STIs like syphilis and chlamydia within 72 hours after possible exposure. A newer option — ask your doctor if it applies to you.</div>
+</div>
+<div style="background:linear-gradient(135deg,rgba(76,175,130,0.08),rgba(44,95,141,0.05));border:1.5px solid rgba(76,175,130,0.2);border-radius:var(--radius-md);padding:16px">
+<div style="font-weight:900;color:var(--cape-green);margin-bottom:6px">🌟 U=U — The Science of Certainty</div>
+<div style="font-size:0.85rem;color:var(--text-mid);line-height:1.55">Undetectable = Untransmittable. People living with HIV who take their treatment as prescribed can reach a point where the virus cannot be passed to others. One of the most hopeful breakthroughs in modern medicine.</div>
+</div>
+</div>
+<h3>👥 Build Your Health Team Now</h3>
+<p>Start building your support crew before you need them: doctor or school nurse, trusted parent or family member, school counselor, local health department or free clinic.</p>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>These Medical Shields power the <strong>M</strong> (My Medical Choices & Check-Ups) in your MATCH Compass. When you combine vaccines, testing, and smart conversations with your doctor alongside your choice to wait and your other CAPE tools, you create total freedom and confidence.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">💉</div><div><div class="ws-title">Vaccine Tracker & Health Team</div><div class="ws-sub">Take charge of your health information</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">Vaccine Tracker</div><div class="prompt-text">Check off vaccines you’ve had or note ones to ask your doctor about:</div><textarea class="prompt-textarea" data-key="j-7-p1" placeholder="HPV Vaccine: ___  Hepatitis B: ___  Mpox: ___  Others: ___  Next check-up date: ___"></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">My Medical Shield Promise</div><div class="prompt-text">“I show myself respect by…” (include vaccines, check-ups, waiting, and talking to my doctor)</div><textarea class="prompt-textarea" data-key="j-7-p2" placeholder="I show myself respect by..."></textarea></div>
+</div>
+${navRow(‘chapter-6’,‘chapter-8’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 8 — MATCH COMPASS
+================================================================ */
+function buildCh8(){
+const compassSvg=`<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"> <defs> <radialGradient id="cg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1A3060"/><stop offset="100%" stop-color="#0D1A2E"/></radialGradient> <radialGradient id="cg2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#2C5F8D"/><stop offset="100%" stop-color="#1A3060"/></radialGradient> <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter> </defs> <!-- Outer ring --> <circle cx="150" cy="150" r="140" fill="url(#cg1)" stroke="rgba(246,204,0,0.4)" stroke-width="2"/> <!-- Gear teeth effect --> ${Array.from({length:24},(_,i)=>{const a=i*(360/24)*Math.PI/180;const x1=150+130*Math.cos(a);const y1=150+130*Math.sin(a);const x2=150+140*Math.cos(a);const y2=150+140*Math.sin(a);return`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(246,204,0,0.3)" stroke-width="2"/>`}).join('')} <!-- Inner ring --> <circle cx="150" cy="150" r="110" fill="url(#cg2)" stroke="rgba(0,189,189,0.3)" stroke-width="1.5"/> <!-- Grid lines --> <line x1="150" y1="40" x2="150" y2="260" stroke="rgba(255,255,255,0.06)" stroke-width="1"/> <line x1="40" y1="150" x2="260" y2="150" stroke="rgba(255,255,255,0.06)" stroke-width="1"/> <line x1="72" y1="72" x2="228" y2="228" stroke="rgba(255,255,255,0.04)" stroke-width="1"/> <line x1="228" y1="72" x2="72" y2="228" stroke="rgba(255,255,255,0.04)" stroke-width="1"/> <!-- Center badge --> <circle cx="150" cy="150" r="36" fill="rgba(0,189,189,0.2)" stroke="rgba(0,189,189,0.6)" stroke-width="2"/> <circle cx="150" cy="150" r="28" fill="rgba(13,26,46,0.9)"/> <text x="150" y="146" text-anchor="middle" fill="#00BDBD" font-size="11" font-family="Fredoka One, sans-serif" font-weight="bold">CAPE</text> <text x="150" y="159" text-anchor="middle" fill="rgba(246,204,0,0.8)" font-size="7.5" font-family="Nunito, sans-serif" font-weight="700">Youth Edition</text> <!-- Compass needle --> <g class="compass-needle" style="transform-origin:150px 150px"> <polygon points="150,82 145,150 150,145 155,150" fill="#FF4444"/> <polygon points="150,218 145,150 150,155 155,150" fill="rgba(255,255,255,0.7)"/> <circle cx="150" cy="150" r="5" fill="white"/> </g> <!-- Cardinal directions --> <text x="150" y="62" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Nunito,sans-serif" font-weight="900">N</text> <text x="150" y="248" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Nunito,sans-serif" font-weight="900">S</text> <text x="248" y="154" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Nunito,sans-serif" font-weight="900">E</text> <text x="52" y="154" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="Nunito,sans-serif" font-weight="900">W</text> <!-- M node - top --> <circle cx="150" cy="40" r="18" fill="#F6CC00" stroke="rgba(246,204,0,0.3)" stroke-width="2" filter="url(#glow)"/> <text x="150" y="45" text-anchor="middle" fill="#7D4F00" font-size="15" font-family="Fredoka One,sans-serif" font-weight="bold">M</text> <!-- A node - right --> <circle cx="260" cy="150" r="18" fill="#00BDBD" stroke="rgba(0,189,189,0.3)" stroke-width="2" filter="url(#glow)"/> <text x="260" y="155" text-anchor="middle" fill="white" font-size="15" font-family="Fredoka One,sans-serif" font-weight="bold">A</text> <!-- T node - bottom --> <circle cx="150" cy="260" r="18" fill="#4CAF82" stroke="rgba(76,175,130,0.3)" stroke-width="2" filter="url(#glow)"/> <text x="150" y="265" text-anchor="middle" fill="white" font-size="15" font-family="Fredoka One,sans-serif" font-weight="bold">T</text> <!-- C node - left --> <circle cx="40" cy="150" r="18" fill="#DD0E6E" stroke="rgba(221,14,110,0.3)" stroke-width="2" filter="url(#glow)"/> <text x="40" y="155" text-anchor="middle" fill="white" font-size="15" font-family="Fredoka One,sans-serif" font-weight="bold">C</text> <!-- H node - upper right --> <circle cx="228" cy="72" r="15" fill="#7B4FBF" stroke="rgba(123,79,191,0.3)" stroke-width="2" filter="url(#glow)"/> <text x="228" y="77" text-anchor="middle" fill="white" font-size="13" font-family="Fredoka One,sans-serif" font-weight="bold">H</text> <!-- Connecting lines --> <line x1="150" y1="58" x2="150" y2="114" stroke="rgba(246,204,0,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/> <line x1="242" y1="150" x2="186" y2="150" stroke="rgba(0,189,189,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/> <line x1="150" y1="242" x2="150" y2="186" stroke="rgba(76,175,130,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/> <line x1="58" y1="150" x2="114" y2="150" stroke="rgba(221,14,110,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/> <line x1="216" y1="84" x2="180" y2="120" stroke="rgba(123,79,191,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/> </svg>`;
+
+return`<div id="page-chapter-8" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#0F1A2E,#1A3060);--hero-icon:'🧭'">
+<div class="hero-part">Part IV — Your CAPE in Action</div>
+<div class="hero-num">Chapter 8</div>
+<h1 class="hero-title">The MATCH Compass — Your Everyday Decision GPS</h1>
+<div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div>
+</div>
+<div class="match-section">
+<div style="text-align:center;margin-bottom:6px"><span style="font-family:'DM Serif Display',serif;font-size:1.7rem">🧭 The MATCH Compass</span></div>
+<p style="text-align:center;color:var(--text-mid);font-size:0.93rem;margin-bottom:24px">Your everyday decision GPS for Safety, Respect, and Empowerment.<br><em>“Prevention works best when the pieces fit together.”</em></p>
+<div class="compass-wrap">
+<div class="compass-svg-wrap" id="compass-svg-wrap">${compassSvg}</div>
+<div style="flex:1;max-width:420px">
+<div class="match-letter-grid">
+<div class="ml-card ml-m" id="ml-M" onclick="selectMatchLetter('M')"><div class="ml-letter">M</div><div class="ml-word">Medical</div></div>
+<div class="ml-card ml-a" id="ml-A" onclick="selectMatchLetter('A')"><div class="ml-letter">A</div><div class="ml-word">Aware</div></div>
+<div class="ml-card ml-t" id="ml-T" onclick="selectMatchLetter('T')"><div class="ml-letter">T</div><div class="ml-word">Tools</div></div>
+<div class="ml-card ml-c" id="ml-C" onclick="selectMatchLetter('C')"><div class="ml-letter">C</div><div class="ml-word">Comm.</div></div>
+<div class="ml-card ml-h" id="ml-H" onclick="selectMatchLetter('H')"><div class="ml-letter">H</div><div class="ml-word">Habits</div></div>
+</div>
+<div class="match-detail-panel" id="match-detail-panel">
+<div style="text-align:center;color:#94A3B8;font-size:0.88rem;padding:12px">👆 Tap a letter to explore what it means</div>
+</div>
+</div>
+</div>
+<!-- Real-Life Scenarios -->
+<div class="match-scenario-section">
+<div class="ms-label">🧭 Real-Life MATCH Compass Practice</div>
+<div class="ms-tabs">
+<button class="ms-tab active" onclick="document.querySelectorAll('.ms-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');renderMatchScenario(0)">Scenario 1 — Group Hang</button>
+<button class="ms-tab" onclick="document.querySelectorAll('.ms-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active');renderMatchScenario(1)">Scenario 2 — Online Contact</button>
+</div>
+<div id="match-scenario-area"></div>
+</div>
+</div>
+<div class="cb">
+<div class="callout">The MATCH Compass turns all your separate skills into one unstoppable system. Pull it out anytime you need a quick check-in — it will always point you toward the choice that lets you live your strongest, most empowered life.</div>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>Mastering the MATCH Compass turns all your separate skills into one unstoppable superpower. You are now equipped to move through the world <strong>Confident, Aware, Protected, and Empowered</strong> — exactly as you were meant to be.</p></div>
+</div>
+<div class="worksheet">
+<div class="ws-header"><div class="ws-icon">🧭</div><div><div class="ws-title">Weekly CAPE Check-In Journal</div><div class="ws-sub">3 reflection questions to run daily</div></div></div>
+<div class="journal-prompt"><div class="prompt-num">Today I used my MATCH Compass by…</div><textarea class="prompt-textarea" data-key="j-8-p1" placeholder="e.g., I noticed my gut was telling me something felt off, so I used A (Awareness)..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">One healthy habit I practiced was…</div><textarea class="prompt-textarea" data-key="j-8-p2" placeholder="e.g., I said no to something that didn't feel right..."></textarea></div>
+<div class="journal-prompt"><div class="prompt-num">One boundary I protected was…</div><textarea class="prompt-textarea" data-key="j-8-p3" placeholder="e.g., I used the 3-Second Rule before posting..."></textarea></div>
+</div>
+${navRow(‘chapter-7’,‘chapter-9’)}
+
+  </div>`;
+}
+
+/* ================================================================
+CHAPTER 9
+================================================================ */
+function buildCh9(){
+const challengeItems=[‘Used my voice with FRIES — said what I meant, clearly and kindly’,‘Protected a boundary — mine or someone else's’,‘Ran my MATCH Compass before making a decision’,‘Practiced a healthy habit that showed my body respect’,‘Checked in with a friend: “Hey, are you actually okay?”’,‘Used the 3-Second Rule before posting or sending something’,‘Walked away from a situation that didn't honor me’,‘Told a trusted adult something I had been carrying alone’];
+return`<div id="page-chapter-9" class="chapter-page"> <div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#FF6B35,#DD0E6E);--hero-icon:'🦸'"> <div class="hero-part">Part IV — Your CAPE in Action</div> <div class="hero-num">Chapter 9</div> <h1 class="hero-title">Becoming the Leader Your World Needs</h1> <div class="grade-pills"><span class="grade-pill">🟢 Grades 4–8</span><span class="grade-pill">🔵 Grades 9–12</span></div> </div> <div class="cb"> <div style="font-family:'DM Serif Display',serif;font-size:1.7rem;text-align:center;color:var(--cape-orange);margin-bottom:18px">You did it.</div> <p>Not almost. Not kind of. <strong>All the way through.</strong> You've just completed one of the most honest, most courageous things a young person can do — you chose to learn. You chose to show up for yourself. You read every chapter, sat with the hard stuff, and built a toolkit that most adults are still figuring out.</p> <p>That matters. And we want you to know we see it.</p> <div class="callout">But here's what we need you to understand before you close this book: This isn't graduation <em>from</em> something. This is the starting line <em>of</em> something.</div> <h3>🦸 You Were Always the Hero of This Story</h3> <p>Think back to Chapter 1. You started there with something deceptively simple: own your health. Respect starts with you. At the time, that might have felt small — like a warm-up. But it wasn't a warm-up. <strong>It was the foundation of everything that followed.</strong></p> <p>Every boundary you learned to set in Chapter 5 was built on that foundation. Every FRIES conversation you practiced in Chapter 4 was built on that foundation. Every time you'll run your MATCH Compass in a real situation — that moment of clarity where you choose yourself — that's built on the belief you planted in Chapter 1: <em>that you are worth protecting.</em></p> <h3>🌊 What Real Strength Looks Like</h3> <ul> <li>Strength is NOT doing something you're not ready for</li> <li>Strength is NOT going along to fit in</li> <li>Strength is NOT staying silent when something feels wrong</li> </ul> <div class="ex ex-g">In middle school: You're the friend who makes the group chat kinder. The one who says, "That's not cool" when someone gets roasted too hard. The person who listens without judgment and knows when to tell a trusted adult. You make every room a little safer just by being in it.</div> <div class="ex ex-b">In high school: You're the one who speaks up when the vibe shifts at a party. The teammate who models consent without making it awkward. The leader who proves, every single day, that you can be popular, connected, respected, and still fully in charge of your own story.</div> <h3>🌊 The Ripple Effect in Practice</h3> <ul> <li><strong>When you set a boundary publicly</strong> — you give everyone watching permission to set theirs.</li> <li><strong>When you check in before you assume</strong> — you normalize consent in your friend group.</li> <li><strong>When you trust your gut and leave a situation</strong> — you make it easier for the next person to do the same.</li> <li><strong>When you use your voice with kindness and courage</strong> — you show that FRIES is a real-world skill that actually works.</li> </ul> <p>Culture changes one person at a time — and you are that person.</p> <div class="takeaway"><p>On the hard days, remember: The CAPE doesn't make hard things disappear. It makes you someone who knows how to <strong>move through hard things without losing yourself.</strong> You don't have to be perfect. You just have to keep coming back to what you know — your values, your voice, your boundaries, your MATCH Compass.</p></div> </div> <!-- THE CAPE PROMISE --> <div class="promise-section"> <div class="promise-title">✦ The CAPE Promise ✦</div> <div class="promise-items"> ${['Own my health and respect my body — not because I have to, but because I am worth it.','Use my voice with courage and kindness, every time, using my FRIES skills.','Trust my awareness. My gut is never wrong about a bad feeling.','Set strong boundaries — and honor the ones other people set for me.','Carry my MATCH Compass into every situation, every day.','Choose to wait until the time is truly right for me — because patience is power.','Lead by example so the people around me feel safer, seen, and respected.','Come back to this promise on the hard days. Especially the hard days.'].map(t=>`<div class="promise-item"><span class="promise-star">✦</span>${t}</div>`).join('')} </div> <div class="promise-acro">I am <span style="color:var(--cape-teal)">Confident</span>. I am <span style="color:var(--cape-gold)">Aware</span>.<br>I am <span style="color:var(--cape-pink)">Protected</span>. I am <span style="color:var(--cape-purple)">Empowered</span>.<br><strong>I am CAPE.</strong></div> <div class="sign-row"> <div class="sign-field"><div class="sign-label">Your Name</div><input type="text" class="sign-input" id="promise-name" placeholder="Sign here..."></div> <div class="sign-field"><div class="sign-label">Today's Date</div><input type="text" class="sign-input" id="promise-date" placeholder="${new Date().toLocaleDateString()}"></div> </div> <button class="btn-promise" id="promise-btn">✦ Seal My CAPE Promise</button> </div> <div class="worksheet"> <div class="ws-header"><div class="ws-icon">✉️</div><div><div class="ws-title">My CAPE Legacy Letter</div><div class="ws-sub">Write a letter to your future self — 1 year or 5 years from now</div></div></div> <div class="journal-prompt"><div class="prompt-num">Letter to Future Me</div><div class="prompt-text">Prompt: "Hey future me — today I learned that I am worth protecting because..."</div><textarea class="prompt-textarea" data-key="j-9-p1" placeholder="Hey future me..." style="min-height:160px"></textarea></div> </div> <div class="cb"> <h2 style="text-align:center;font-size:1.15rem">The 30-Day CAPE Leadership Challenge</h2> <p style="text-align:center;font-size:0.88rem;color:var(--text-mid);margin-bottom:18px">Each day, choose one way to live CAPE. Check it off. At the end of 30 days, celebrate — you just leveled up.</p> <div style="display:flex;flex-direction:column;gap:9px"> ${challengeItems.map((item,i)=>`<div onclick="toggleChallenge(this,${i})" style="display:flex;align-items:center;gap:12px;padding:13px 15px;background:${state.challengeItems&&state.challengeItems[i]?'rgba(76,175,130,0.1)':'#F8F9FA'};border-radius:var(--radius-sm);cursor:pointer;border:2px solid ${state.challengeItems&&state.challengeItems[i]?'var(--cape-green)':'transparent'};transition:all 0.2s">
+<div style="width:26px;height:26px;border-radius:50%;border:2px solid ${state.challengeItems&&state.challengeItems[i]?'var(--cape-green)':'#CBD5E0'};background:${state.challengeItems&&state.challengeItems[i]?'var(--cape-green)':'white'};display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.75rem;color:white;font-weight:900">${state.challengeItems&&state.challengeItems[i]?‘✓’:’’}</div>
+<span style="font-size:0.9rem;font-weight:600;color:${state.challengeItems&&state.challengeItems[i]?'var(--cape-green)':'var(--text-dark)'}">${item}</span>
+</div>`).join(’’)}
+</div>
+</div>
+${navRow(‘chapter-8’,‘digital-crisis’)}
+
+  </div>`;
+}
+
+/* ================================================================
+DIGITAL CRISIS PROTOCOL
+================================================================ */
+function buildDigitalCrisis(){
+return`<div id="page-digital-crisis" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#0d1a2e,#1a3060);--hero-icon:'📱'">
+<div class="hero-part">Appendix — Digital Safety</div>
+<h1 class="hero-title">The CAPE Digital Crisis Protocol</h1>
+<div class="grade-pills"><span class="grade-pill">Equipping Youth for Emergencies They Actually Face</span></div>
+</div>
+<div class="cb">
+<div class="callout">The goal of the Digital Crisis Protocol isn’t restriction — it is <strong>peace of mind</strong>. Pre-planned strategies equal panic-free execution. <strong>Fearless. Aware. Protected.</strong></div>
+<p>The CAPE Digital Crisis Protocol maps directly to your MATCH Compass: the 3-Second Rule maps to <strong>H</strong> (Healthy Habits), Screenshot Reality maps to <strong>A</strong> (Awareness), Ready-to-Use Scripts map to <strong>C</strong> (Clear Communication), and Mute/Unfollow/Block maps to <strong>T</strong> (Tools & Trusted Support).</p>
+</div>
+<div class="crisis-grid">
+<div class="crisis-card cc-teal" style="--crisis-icon:'⏱'"><h3>⏱ The 3-Second Rule</h3><p>Before every “send,” “post,” or “share” — pause 3 seconds and ask: Do I trust this person with my legacy? Would I be okay if this showed up publicly? Is this FRIES-compliant?<br><br><strong>If not sure — don’t send it.</strong></p></div>
+<div class="crisis-card cc-dark" style="--crisis-icon:'📸'"><h3>📸 Screenshot Reality</h3><p>Treat every digital interaction as potentially public. Once sent, it can live forever. Even “disappearing” messages can be screenshotted. You are the curator of your digital museum — curate wisely.</p></div>
+<div class="crisis-card cc-orange" style="--crisis-icon:'🔇'"><h3>🔇 Digital Superpowers</h3><p>Mute, Unfollow, and Block are valid, powerful tools — not drama. You never owe anyone access to your digital space. Use them without apology when someone or something messes with your peace.</p></div>
+<div class="crisis-card cc-pink" style="--crisis-icon:'📝'"><h3>📝 Ready-to-Use Scripts</h3><p>“I’m not comfortable with that — please don’t send me content like this.”<br>“I’m stepping away from this chat for a while.”<br>“Please don’t post/share that — I changed my mind.”</p></div>
+</div>
+<div class="cb">
+<h2>🚨 High-Pressure Moments — The 4 Pivots</h2>
+<p>These are the situations you need to be prepared for <em>before</em> they happen. Run your MATCH Compass on each one.</p>
+</div>
+<div class="hpm-grid">
+<div class="hpm-card hpm-card-1"><div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;color:#888;margin-bottom:6px">Situation 1</div><div class="hpm-situation">You’re at a sleepover and the vibe feels sketchy. An older person keeps trying to get you alone.</div><div class="hpm-pivot-label hpm-pivot-label-1">🧭 The MATCH Pivot</div><div class="hpm-pivot">Trust your <strong>A</strong> (Built-in Radar) to validate the threat, then use your <strong>T</strong> — text a parent for an immediate ride. Your gut is data, not drama.</div></div>
+<div class="hpm-card hpm-card-2"><div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;color:#888;margin-bottom:6px">Situation 2</div><div class="hpm-situation">A pushy partner is ignoring your verbal cues and moving too fast.</div><div class="hpm-pivot-label hpm-pivot-label-2">🧭 The MATCH Pivot</div><div class="hpm-pivot">Deploy your <strong>C</strong> (Strongest Voice / rehearsed boundary script) and physically create space. “Stop. I said no.” Then use your T — your exit plan.</div></div>
+<div class="hpm-card hpm-card-3"><div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;color:#888;margin-bottom:6px">Situation 3</div><div class="hpm-situation">Someone online you’ve never met keeps messaging you and asking where you go to school.</div><div class="hpm-pivot-label hpm-pivot-label-3">🧭 The MATCH Pivot</div><div class="hpm-pivot">Trust your <strong>A</strong> (this is moving too fast) and immediately use your <strong>T</strong> — block the account and alert a trusted adult. This is the correct sequence.</div></div>
+<div class="hpm-card hpm-card-4"><div style="font-size:0.7rem;font-weight:900;text-transform:uppercase;letter-spacing:0.08em;color:#888;margin-bottom:6px">Situation 4</div><div class="hpm-situation">Your ride home cancels. You don’t feel safe asking the people at the party for a lift.</div><div class="hpm-pivot-label hpm-pivot-label-4">🧭 The MATCH Pivot</div><div class="hpm-pivot">Activate your <strong>T</strong> — speed-dial your backup trusted adult. Use your <strong>H</strong>: prioritize your actual safety over the fear of “making a scene.” Your life > social comfort.</div></div>
+</div>
+<div class="cb">
+<h2>🚨 High-Stakes Emergency: Intimate Image Action Plan</h2>
+<div class="warn-box"><strong>The Strict Rule:</strong> Never send or ask for private photos or videos of anyone’s body — including your own. Even between friends, this causes serious harm and breaks laws. Even if you are pressured. Even if “everyone is doing it.”</div>
+<p>If you receive an intimate image — regardless of how it got to you:</p>
+<div class="sdr-wrap">
+<div class="sdr-step"><div class="sdr-num">1</div><span class="sdr-icon">✋</span><div class="sdr-title">STOP</div><div class="sdr-desc">Do NOT forward, save, screenshot, or share the image. Doing so can make you legally liable — even if you didn’t ask for it.</div></div>
+<div class="sdr-step"><div class="sdr-num">2</div><span class="sdr-icon">🗑</span><div class="sdr-title">DELETE</div><div class="sdr-desc">Erase the image from your device instantly. Delete from “recently deleted” files too.</div></div>
+<div class="sdr-step"><div class="sdr-num">3</div><span class="sdr-icon">📢</span><div class="sdr-title">REPORT</div><div class="sdr-desc">Tell a trusted adult immediately. If needed, contact local law enforcement. You are not in trouble — you did the right thing.</div></div>
+</div>
+<div class="takeaway"><strong>Your CAPE Takeaway</strong><p>The Digital Crisis Protocol powers your <strong>A</strong> (Awareness), <strong>C</strong> (Clear Communication), <strong>T</strong> (Tools & Trusted Support), and <strong>H</strong> (Healthy Habits) simultaneously. Pre-planned strategies equal panic-free execution.</p></div>
+</div>
+${navRow(‘chapter-9’,‘resources’)}
+
+  </div>`;
+}
+
+/* ================================================================
+RESOURCES
+================================================================ */
+function buildResources(){
+return`<div id="page-resources" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#DC3545,#FF6B35);--hero-icon:'🆘'">
+<div class="hero-part">Appendix</div>
+<h1 class="hero-title">Resources & Help 🆘</h1>
+<div class="grade-pills"><span class="grade-pill">Always Available — 24/7</span></div>
+</div>
+<div class="cb" style="background:linear-gradient(135deg,#FFF5F5,#FFF);border-left:4px solid var(--cape-pink)">
+<p style="font-weight:900;font-size:1rem;color:var(--cape-pink)">⚡ If you are in immediate danger, call 911 now.</p>
+<p>You are never alone. Every resource below is free and here for you. Reaching out is a CAPE move.</p>
+</div>
+<div class="resources-grid">
+<div class="resource-card rc-crisis">
+<div class="resource-icon">🆘</div>
+<div class="resource-title">Immediate Crisis Help</div>
+<ul class="resource-list">
+<li><strong>Texas 211</strong>Dial 211 — 24/7 help with health, housing, crisis situations</li>
+<li><strong>National Crisis & Suicide Lifeline</strong>Call or text 988 (24/7, confidential)</li>
+<li><strong>Love is Respect (Relationships)</strong>1-866-331-9474 or loveisrespect.org</li>
+<li><strong>RAINN (Sexual Violence)</strong>1-800-656-HOPE (4673) or rainn.org</li>
+<li><strong>Texas Child Protective Services</strong>1-800-252-5400</li>
+</ul>
+</div>
+<div class="resource-card rc-health">
+<div class="resource-icon">🏥</div>
+<div class="resource-title">Health & Testing</div>
+<ul class="resource-list">
+<li><strong>Texas DSHS</strong>dshs.texas.gov — free/low-cost clinics, vaccine info</li>
+<li><strong>Harris County Public Health (Houston)</strong>publichealth.harriscountytx.gov</li>
+<li><strong>Find a Free Clinic Near You</strong>gettested.cdc.gov</li>
+<li><strong>National Alliance for Eating Disorders</strong>1-866-662-1235 (if needed)</li>
+</ul>
+</div>
+<div class="resource-card rc-digital">
+<div class="resource-icon">💻</div>
+<div class="resource-title">Digital Safety</div>
+<ul class="resource-list">
+<li><strong>NetSmartz (Online Safety for Youth)</strong>netsmartz.org</li>
+<li><strong>NCMEC CyberTipline</strong>Report exploitation at missingkids.org</li>
+<li><strong>Image Sharing Concerns</strong>Report to a trusted adult or local law enforcement immediately — you are not in trouble</li>
+</ul>
+</div>
+<div class="resource-card rc-educators">
+<div class="resource-icon">🏫</div>
+<div class="resource-title">For Parents & Educators</div>
+<ul class="resource-list">
+<li><strong>Texas Education Agency TEKS</strong>tea.texas.gov</li>
+<li><strong>The Harness Project</strong>theharnessproject.org</li>
+<li><strong>Contact the Author</strong>christopher@theharnessproject.org</li>
+<li><strong>CAPE Parent Workshop Slides</strong>Free download at theharnessproject.org</li>
+</ul>
+</div>
+</div>
+<div class="nav-row">
+<button class="btn-prev" onclick="showPage('digital-crisis')">← Digital Crisis Protocol</button>
+<button class="btn-next" onclick="showPage('glossary')">Glossary →</button>
+</div>
+
+  </div>`;
+}
+
+/* ================================================================
+GLOSSARY
+================================================================ */
+function buildGlossary(){
+const terms=[
+[‘Abstinence’,‘Choosing to wait before engaging in closer physical contact; the only 100% effective choice for preventing pregnancy and STIs. In CAPE, framed as an active leadership choice — not a restriction.’],
+[‘Boundary’,‘Clear rules you set about what is okay and not okay for how others treat you — physical, emotional, or digital. Boundaries are instructions, not walls.’],
+[‘CAPE’,‘Confident, Aware, Protected, Empowered — the four pillars of the CAPE Youth Edition framework.’],
+[‘Consent’,‘Freely given, reversible, informed, enthusiastic, and specific agreement (FRIES). Without all five elements, it is not real consent.’],
+[‘Digital Legacy’,‘The permanent record of everything you post, share, and send online. You are the curator of your own digital museum.’],
+[‘FRIES’,‘The consent framework: Freely Given, Reversible, Informed, Enthusiastic, Specific.’],
+[‘Green Track’,‘The CAPE curriculum designed for Grades 4–8, focusing on mindset, consent, boundaries, and choosing your own pace. Module 3 is age-gated.’],
+[‘Blue Track’,‘The full CAPE curriculum for Grades 9–12, which unlocks Module 3: Protection Shields — frontline gear and advanced medical options.’],
+[‘Grooming’,‘When an adult or older peer builds trust with a young person in order to manipulate them into harmful situations. Always tell a trusted adult if something feels “off.”’],
+[‘HPV’,‘Human Papillomavirus — a common virus preventable by the Gardasil 9 vaccine. Getting vaccinated is a simple, powerful health move.’],
+[‘MATCH Compass’,‘Your everyday decision GPS: Medical Choices & Check-Ups, Awareness of Self & Surroundings, Tools & Trusted Support, Clear Communication & Consent, Healthy Habits & Choices.’],
+[‘PEP’,‘Post-Exposure Prophylaxis — medicine started within 72 hours after a possible HIV exposure. The “Emergency Brake.” Know where to go before you need it.’],
+[‘PrEP’,‘Pre-Exposure Prophylaxis — medicine taken ahead of time by people at higher risk to help prevent HIV. The “Daily Shield.” Talk to a doctor about eligibility.’],
+[‘Refusal Skills’,‘Practiced, confident ways to say no clearly — “I'm not comfortable with that,” “That's not for me,” or simply leaving a situation.’],
+[‘STI / STD’,‘Sexually Transmitted Infection / Disease — infections passed through sexual contact. Testing is private, confidential, and often free. Knowing your status is a CAPE move.’],
+[‘The 3-Second Rule’,‘Before posting, sending, or sharing — pause 3 seconds and ask three questions about consent, trust, and legacy.’],
+[‘U=U’,‘Undetectable = Untransmittable — people living with HIV who take treatment as prescribed cannot pass the virus to others. One of the most hopeful breakthroughs in modern medicine.’],
+];
+return`<div id="page-glossary" class="chapter-page"> <div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#495057,#6C757D);--hero-icon:'📖'"> <div class="hero-part">Appendix</div> <h1 class="hero-title">Glossary 📖</h1> </div> <div class="cb" style="margin-bottom:16px"><p>Key terms used throughout the CAPE Youth Edition — in plain language, no judgment, no shame.</p></div> <div class="glossary-grid">${terms.map(([t,d])=>`<div class="glossary-item"><div class="glossary-term">${t}</div><div class="glossary-def">${d}</div></div>`).join(’’)}</div>
+<div style="margin-top:14px;text-align:center;color:var(--text-mid);font-size:0.83rem">Full glossary contains 35+ terms. Visit <strong>theharnessproject.org</strong> for the complete reference.</div>
+<div class="nav-row">
+<button class="btn-prev" onclick="showPage('resources')">← Resources</button>
+<button class="btn-next" onclick="showPage('about')">About the Author →</button>
+</div>
+
+  </div>`;
+}
+
+/* ================================================================
+ABOUT THE AUTHOR
+================================================================ */
+function buildAbout(){
+return`<div id="page-about" class="chapter-page">
+<div class="about-hero">
+<div class="about-photo-row">
+<div class="about-photo-circle">👤</div>
+<div>
+<div style="font-size:0.72rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px">About the Author</div>
+<h1 style="font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,4vw,2rem);color:white;margin-bottom:8px">Christopher Zacharie</h1>
+<div style="color:rgba(255,255,255,0.8);font-size:0.93rem;line-height:1.6;margin-bottom:14px">Founder, The Harness Project LLC<br>Certified HIV Prevention Specialist</div>
+<div class="about-creds">
+<span class="cred-chip">🎓 B.S. Interdisciplinary Studies</span>
+<span class="cred-chip">🏥 HIV Prevention Specialist — Certified</span>
+<span class="cred-chip">🏫 13 Years Classroom Teaching Experience</span>
+<span class="cred-chip">🔬 Combination Prevention Training — GCHD</span>
+</div>
+</div>
+</div>
+</div>
+<div class="cb">
+<p>Christopher Zacharie is a sexual health educator and the founder of The Harness Project LLC, a curriculum development and educational wellness organization based in Houston, Texas. His work is dedicated to transforming sexual health education from a narrative of fear into one of empowerment and self-advocacy.</p>
+<p>A former classroom teacher with 13 years of experience across multiple grade levels, Christopher combines deep expertise in education, community outreach, and public health to make sexual health information accessible, culturally relevant, and completely non-judgmental. He holds a B.S. in Interdisciplinary Studies and is a certified HIV Prevention Specialist trained in Combination Prevention through the Galveston County Health District.</p>
+<p>The CAPE Youth Edition grew from Christopher’s core belief: that when young people are given the language, tools, and framework to see health as a leadership identity — not a set of restrictions — everything changes. They don’t just follow rules. They build lives.</p>
+<div class="callout">Reframing sexual health as a <strong>leadership identity</strong>, not a set of restrictive rules — replacing fear with agency, one young person at a time.</div>
+<h3>📚 Other Works from The Harness Project</h3>
+<ul>
+<li><strong>HARNESS Facilitator Curriculum</strong> — Complete adult sexual health education toolkit</li>
+<li><strong>MATCH Flow App</strong> — Real-time digital crisis intervention for adults (matchflowapp.base44.app)</li>
+<li><strong>MATCH Your Protection: Fearless, Aware & Protected (FAP) Educators Hub</strong> — Paid, licensed curriculum package for health educators</li>
+<li><strong>CAPE Digital Crisis Protocol</strong> — Standalone module for youth digital safety programming</li>
+</ul>
+<h3>📬 Contact</h3>
+<p>Email: <strong>christopher@theharnessproject.org</strong><br>Website: <strong>theharnessproject.org</strong><br>MATCH Flow App: <strong>matchflowapp.base44.app</strong></p>
+</div>
+<div class="cb">
+<h2>Acknowledgments</h2>
+<p>Thank you to every young person who tested chapters and gave honest feedback. To the Texas health educators who reviewed content for TEKS alignment. To the families who reminded us that respect is the real superpower. And to every community partner who believed that young people deserve more than fear-based education — they deserve the tools to lead.</p>
+<p>Special thanks to the Galveston County Health District and every organization working on the front lines of sexual health education in Texas and beyond.</p>
+<h3>📋 Disclaimer</h3>
+<p>This book is a supplemental educational resource aligned with Texas TEKS Health Education Standards. It is not a substitute for professional medical, legal, or counseling advice. Always talk with a trusted adult, parent, doctor, or school counselor. The information on vaccines, testing, and protection tools is current as of 2026 and should be verified with a healthcare provider.</p>
+<p>© 2026 Christopher Zacharie / The Harness Project LLC. All rights reserved. No part of this book may be reproduced without written permission. Licensed educational content.</p>
+</div>
+<div class="nav-row">
+<button class="btn-prev" onclick="showPage('glossary')">← Glossary</button>
+<button class="btn-next" onclick="showPage('badges')">My Achievements 🏆</button>
+</div>
+
+  </div>`;
+}
+
+/* ================================================================
+BADGES PAGE
+================================================================ */
+function buildBadgesPage(){
+return`<div id="page-badges" class="chapter-page">
+<div class="chapter-hero" style="--hero-bg:linear-gradient(135deg,#1A2340,#2C3E60);--hero-icon:'🏆'">
+<div class="hero-part">My Progress</div>
+<h1 class="hero-title">My Achievements 🏆</h1>
+</div>
+<div class="cape-tracker">
+<div class="tracker-title">Your CAPE Power</div>
+<div class="tracker-sub">Complete chapters and activities to earn badges and grow your power level.</div>
+<div class="prog-track">
+<div class="prog-label-row"><span class="prog-label-text">Overall Progress</span><span class="prog-pct">0%</span></div>
+<div class="prog-bar-track"><div class="prog-bar-fill" style="width:0%"></div></div>
+</div>
+<div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:22px">
+<div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--cape-gold)" class="dash-chapters-val">0</div><div style="font-size:0.68rem;font-weight:800;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em">Chapters Done</div></div>
+<div><div style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--cape-gold)" class="dash-badges-val">0</div><div style="font-size:0.68rem;font-weight:800;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.08em">Badges Earned</div></div>
+</div>
+<div style="font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px">🏅 Badge Collection</div>
+<div class="badges-grid" id="badges-page-grid"></div>
+</div>
+<div class="nav-row"><button class="btn-prev" onclick="showPage('about')">← About the Author</button><button class="btn-next" onclick="showPage('dashboard')">Dashboard 🏠</button></div>
+
+  </div>`;
+}
+</script>
+</body>
+</html>
